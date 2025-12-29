@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8b0a6a06bc104733a2bf7a682eb46f00" Name="Diagram1" ZoomLevel="71">
+        <EntityTypeShape EntityType="GPMSModel.AppActionGroup" Width="1.5" PointX="11.75" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="GPMSModel.AppActionGroupAccess" Width="1.5" PointX="14" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GPMSModel.AppFormAction" Width="1.5" PointX="11.75" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GPMSModel.AppMenu" Width="1.5" PointX="7.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GPMSModel.AppMenuGroup" Width="1.5" PointX="7.75" PointY="16.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="GPMSModel.AppMenuGroupAccess" Width="1.5" PointX="10" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GPMSModel.AppUserCompanyAccess" Width="1.5" PointX="12.75" PointY="7.5" IsExpanded="true" />
+        <AssociationConnector Association="GPMSModel.FK_AppActionGroupAccess_AppActionGroup" ManuallyRouted="false" />
+        <AssociationConnector Association="GPMSModel.FK_AppActionGroupAccess_AppFormAction" ManuallyRouted="false" />
+        <AssociationConnector Association="GPMSModel.FK_AppMenuGroupAccess_AppMenu" ManuallyRouted="false" />
+        <AssociationConnector Association="GPMSModel.FK_AppMenuGroupAccess_AppMenuGroups" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="GPMSModel.CartonInfo" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="GPMSModel.ColorInfo" Width="1.5" PointX="21.5" PointY="9.625" />
+        <EntityTypeShape EntityType="GPMSModel.CompanyInfo" Width="1.5" PointX="14.75" PointY="13.75" />
+        <EntityTypeShape EntityType="GPMSModel.CustomerInfo" Width="1.5" PointX="17" PointY="13.875" />
+        <EntityTypeShape EntityType="GPMSModel.Log4AppActivity" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="GPMSModel.Log4UserActivity" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="GPMSModel.PackingType" Width="1.5" PointX="17" PointY="21.375" />
+        <EntityTypeShape EntityType="GPMSModel.PaymentModeInfo" Width="1.5" PointX="17" PointY="44.25" />
+        <EntityTypeShape EntityType="GPMSModel.POFrom" Width="1.5" PointX="17" PointY="30.5" />
+        <EntityTypeShape EntityType="GPMSModel.POLevel" Width="1.5" PointX="17" PointY="49.125" />
+        <EntityTypeShape EntityType="GPMSModel.POType" Width="1.5" PointX="17" PointY="25.875" />
+        <EntityTypeShape EntityType="GPMSModel.ShipmentTerm" Width="1.5" PointX="17" PointY="53.625" />
+        <EntityTypeShape EntityType="GPMSModel.ShippingMethod" Width="1.5" PointX="17" PointY="35" />
+        <EntityTypeShape EntityType="GPMSModel.StyleInfo" Width="1.5" PointX="19.25" PointY="7" />
+        <EntityTypeShape EntityType="GPMSModel.TermInfo" Width="1.5" PointX="17" PointY="39.375" />
+        <EntityTypeShape EntityType="GPMSModel.UOM" Width="1.5" PointX="8.75" PointY="0.75" />
+        <EntityTypeShape EntityType="GPMSModel.UserInfo" Width="1.5" PointX="8.75" PointY="5.75" />
+        <AssociationConnector Association="GPMSModel.FK_CustomerInfo_CompanyInfo" />
+        <EntityTypeShape EntityType="GPMSModel.Log4DBActivity" Width="1.5" PointX="0.75" PointY="10.75" />
+        <EntityTypeShape EntityType="GPMSModel.POApprovalStatu" Width="1.5" PointX="2.75" PointY="12.75" />
+        <EntityTypeShape EntityType="GPMSModel.POD" Width="1.5" PointX="21.875" PointY="21.75" />
+        <EntityTypeShape EntityType="GPMSModel.POM" Width="1.5" PointX="19.625" PointY="30.75" />
+        <EntityTypeShape EntityType="GPMSModel.SizeInfo" Width="1.5" PointX="21.875" PointY="15.75" />
+        <AssociationConnector Association="GPMSModel.FK_POM_CustomerInfo" />
+        <AssociationConnector Association="GPMSModel.FK_POM_PackingType" />
+        <AssociationConnector Association="GPMSModel.FK_POM_PaymentModeInfo" />
+        <AssociationConnector Association="GPMSModel.FK_POD_POM" />
+        <AssociationConnector Association="GPMSModel.FK_POD_StyleInfo" />
+        <AssociationConnector Association="GPMSModel.FK_POM_POForm" />
+        <AssociationConnector Association="GPMSModel.FK_POM_POLevel" />
+        <AssociationConnector Association="GPMSModel.FK_POM_POType" />
+        <AssociationConnector Association="GPMSModel.FK_POM_ShipmentTerm" />
+        <AssociationConnector Association="GPMSModel.FK_POM_ShippingMethod" />
+        <AssociationConnector Association="GPMSModel.FK_POM_TermInfo" />
+        <EntityTypeShape EntityType="GPMSModel.PackingPlanData" Width="1.5" PointX="16.375" PointY="0.75" />
+        <EntityTypeShape EntityType="GPMSModel.POSizeD" Width="1.5" PointX="24.125" PointY="15.125" />
+        <AssociationConnector Association="GPMSModel.FK_POSizeD_ColorInfo" />
+        <AssociationConnector Association="GPMSModel.FK_POSizeD_POD" />
+        <AssociationConnector Association="GPMSModel.FK_POSizeD_SizeInfo" />
+        <EntityTypeShape EntityType="GPMSModel.PackingInstructionD" Width="1.5" PointX="24.125" PointY="8.5" />
+        <EntityTypeShape EntityType="GPMSModel.PackingInstructionM" Width="1.5" PointX="21.875" PointY="0.75" />
+        <AssociationConnector Association="GPMSModel.FK_ColorID" />
+        <AssociationConnector Association="GPMSModel.FK_PackingInstructionM_CustomerInfo" />
+        <AssociationConnector Association="GPMSModel.FK_PackingInstructionD_PackingInstructionM" />
+        <AssociationConnector Association="GPMSModel.FK_SizeID" />
+        <AssociationConnector Association="GPMSModel.FK_StyleID" />
+        <AssociationConnector Association="GPMSModel.FK_PackingInstructionM_POM" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

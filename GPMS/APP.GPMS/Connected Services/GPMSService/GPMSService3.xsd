@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Entities.GPMS" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Entities.GPMS" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:63995/GPMSService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="FetchDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BoardEntries" nillable="true" type="tns:ArrayOfBoardEntryKeyValue" />
+      <xs:element minOccurs="0" name="ColorInfoCollection" nillable="true" type="tns:ArrayOfColorInfoBo" />
+      <xs:element minOccurs="0" name="CompanyInfoCollection" nillable="true" type="tns:ArrayOfCompanyInfoBo" />
+      <xs:element minOccurs="0" name="CustomerInfoCollection" nillable="true" type="tns:ArrayOfCustomerInfoBo" />
+      <xs:element minOccurs="0" name="DtoStatus" type="tns:DtoStatus" />
+      <xs:element minOccurs="0" name="DtoStatusNotes" nillable="true" type="tns:DtoStatusNotes" />
+      <xs:element minOccurs="0" name="SelectedCount" type="xs:int" />
+      <xs:element minOccurs="0" name="SizeInfoCollection" nillable="true" type="tns:ArrayOfSizeInfoBo" />
+      <xs:element minOccurs="0" name="StyleInfoCollection" nillable="true" type="tns:ArrayOfStyleInfoBo" />
+      <xs:element minOccurs="0" name="TotalCount" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FetchDto" nillable="true" type="tns:FetchDto" />
+  <xs:complexType name="ArrayOfBoardEntryKeyValue">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BoardEntryKeyValue" nillable="true" type="tns:BoardEntryKeyValue" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBoardEntryKeyValue" nillable="true" type="tns:ArrayOfBoardEntryKeyValue" />
+  <xs:complexType name="BoardEntryKeyValue">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Value" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BoardEntryKeyValue" nillable="true" type="tns:BoardEntryKeyValue" />
+  <xs:complexType name="ArrayOfColorInfoBo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ColorInfoBo" nillable="true" type="tns:ColorInfoBo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfColorInfoBo" nillable="true" type="tns:ArrayOfColorInfoBo" />
+  <xs:complexType name="ColorInfoBo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ColorCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ColorName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreatedAt" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerID" type="xs:int" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Notes" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpdatedAt" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UpdatedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpdatedCount" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ColorInfoBo" nillable="true" type="tns:ColorInfoBo" />
+  <xs:complexType name="ArrayOfCompanyInfoBo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CompanyInfoBo" nillable="true" type="tns:CompanyInfoBo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCompanyInfoBo" nillable="true" type="tns:ArrayOfCompanyInfoBo" />
+  <xs:complexType name="CompanyInfoBo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CompanyCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CompanyName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Country" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreatedAt" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerInfoCollection" nillable="true" type="tns:ArrayOfCustomerInfoBo" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DisplayName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FAX" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LogoPath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Notes" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PhoneNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PreFix" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShortName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Since" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpdatedAt" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UpdatedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpdatedCount" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="WebURL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Zipcode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CompanyInfoBo" nillable="true" type="tns:CompanyInfoBo" />
+  <xs:complexType name="ArrayOfCustomerInfoBo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CustomerInfoBo" nillable="true" type="tns:CustomerInfoBo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCustomerInfoBo" nillable="true" type="tns:ArrayOfCustomerInfoBo" />
+  <xs:complexType name="CustomerInfoBo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BillingAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CompanyID" type="xs:int" />
+      <xs:element minOccurs="0" name="CompanyInfoBo" nillable="true" type="tns:CompanyInfoBo" />
+      <xs:element minOccurs="0" name="Country" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreatedAt" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EMail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FAX" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Notes" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PhoneNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PreFix" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShortName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpdatedAt" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UpdatedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpdatedCount" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Zipcode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CustomerInfoBo" nillable="true" type="tns:CustomerInfoBo" />
+  <xs:simpleType name="DtoStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Error" />
+      <xs:enumeration value="AlreadyExist" />
+      <xs:enumeration value="Success" />
+      <xs:enumeration value="Failed" />
+      <xs:enumeration value="Duplicate" />
+      <xs:enumeration value="RecordNotAdded" />
+      <xs:enumeration value="RecordNotUpdated" />
+      <xs:enumeration value="RecordNotUpdatedWithoutChanges" />
+      <xs:enumeration value="NoDataFound" />
+      <xs:enumeration value="InvalidDate" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DtoStatus" nillable="true" type="tns:DtoStatus" />
+  <xs:complexType name="DtoStatusNotes">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Exception" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ExtraNotes" nillable="true" type="q1:ArrayOfstring" />
+      <xs:element minOccurs="0" name="StackTrace" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DtoStatusNotes" nillable="true" type="tns:DtoStatusNotes" />
+  <xs:complexType name="ArrayOfSizeInfoBo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SizeInfoBo" nillable="true" type="tns:SizeInfoBo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSizeInfoBo" nillable="true" type="tns:ArrayOfSizeInfoBo" />
+  <xs:complexType name="SizeInfoBo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreatedAt" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerID" type="xs:int" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Notes" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SizeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SizeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpdatedAt" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UpdatedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpdatedCount" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SizeInfoBo" nillable="true" type="tns:SizeInfoBo" />
+  <xs:complexType name="ArrayOfStyleInfoBo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StyleInfoBo" nillable="true" type="tns:StyleInfoBo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStyleInfoBo" nillable="true" type="tns:ArrayOfStyleInfoBo" />
+  <xs:complexType name="StyleInfoBo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreatedAt" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerID" type="xs:int" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Notes" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StyleCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StyleName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpdatedAt" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UpdatedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpdatedCount" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StyleInfoBo" nillable="true" type="tns:StyleInfoBo" />
+</xs:schema>

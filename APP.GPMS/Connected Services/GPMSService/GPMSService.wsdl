@@ -1,0 +1,1675 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="GPMSService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:63995/GPMSService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:63995/GPMSService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:63995/GPMSService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Entities.GPMS" />
+      <xsd:import schemaLocation="http://localhost:63995/GPMSService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
+      <xsd:import schemaLocation="http://localhost:63995/GPMSService.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IGPMSService_AddPackingInstructionD_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddPackingInstructionD" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_AddPackingInstructionD_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddPackingInstructionDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetLabels_AcdSprt_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLabels_AcdSprt" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetLabels_AcdSprt_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLabels_AcdSprtResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetPackQty_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPackQty" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetPackQty_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPackQtyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_SkipNGetN_OfCustomerDataWithSearch_InputMessage">
+    <wsdl:part name="parameters" element="tns:SkipNGetN_OfCustomerDataWithSearch" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_SkipNGetN_OfCustomerDataWithSearch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SkipNGetN_OfCustomerDataWithSearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_SkipNGetN_OfStyleDataWithSearch_InputMessage">
+    <wsdl:part name="parameters" element="tns:SkipNGetN_OfStyleDataWithSearch" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_SkipNGetN_OfStyleDataWithSearch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SkipNGetN_OfStyleDataWithSearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_SkipNGetN_OfSizeDataWithSearch_InputMessage">
+    <wsdl:part name="parameters" element="tns:SkipNGetN_OfSizeDataWithSearch" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_SkipNGetN_OfSizeDataWithSearch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SkipNGetN_OfSizeDataWithSearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_SkipNGetN_OfColorDataWithSearch_InputMessage">
+    <wsdl:part name="parameters" element="tns:SkipNGetN_OfColorDataWithSearch" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_SkipNGetN_OfColorDataWithSearch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SkipNGetN_OfColorDataWithSearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_AddCarton_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddCarton" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_AddCarton_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddCartonResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_UpdateCarton_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCarton" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_UpdateCarton_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCartonResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetCartonById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCartonById" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetCartonById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCartonByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetCartonByCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCartonByCode" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetCartonByCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCartonByCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetAllCartons_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCartons" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetAllCartons_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCartonsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_AddColor_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddColor" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_AddColor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddColorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_UpdateColor_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateColor" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_UpdateColor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateColorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetColorById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetColorById" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetColorById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetColorByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetColorByCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetColorByCode" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetColorByCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetColorByCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetAllColors_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllColors" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetAllColors_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllColorsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_AddCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddCustomer" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_AddCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_UpdateCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCustomer" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_UpdateCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetCustomerById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerById" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetCustomerById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetCustomerByCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerByCode" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetCustomerByCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerByCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetAllCustomers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCustomers" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetAllCustomers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCustomersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_AddPaymentMode_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddPaymentMode" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_AddPaymentMode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddPaymentModeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_UpdatePaymentMode_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePaymentMode" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_UpdatePaymentMode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePaymentModeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetPaymentModeById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPaymentModeById" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetPaymentModeById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPaymentModeByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetPaymentModeByCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPaymentModeByCode" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetPaymentModeByCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPaymentModeByCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetAllPaymentModes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllPaymentModes" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetAllPaymentModes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllPaymentModesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_AddSize_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddSize" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_AddSize_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddSizeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_UpdateSize_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSize" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_UpdateSize_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSizeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetSizeById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSizeById" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetSizeById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSizeByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetSizeByCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSizeByCode" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetSizeByCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSizeByCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetAllSizes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllSizes" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetAllSizes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllSizesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_AddStyle_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddStyle" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_AddStyle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddStyleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_UpdateStyle_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateStyle" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_UpdateStyle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateStyleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetStyleById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStyleById" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetStyleById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStyleByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetStyleByCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStyleByCode" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetStyleByCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStyleByCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetAllStyles_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllStyles" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetAllStyles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllStylesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_AddTerm_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddTerm" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_AddTerm_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddTermResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_UpdateTerm_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTerm" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_UpdateTerm_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTermResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetTermById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTermById" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetTermById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTermByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetTermByCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTermByCode" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetTermByCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTermByCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetAllTerms_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllTerms" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetAllTerms_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllTermsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetPOTypeById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPOTypeById" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetPOTypeById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPOTypeByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetPOTypeByCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPOTypeByCode" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetPOTypeByCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPOTypeByCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetAllPOTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllPOTypes" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetAllPOTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllPOTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetPOLevelById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPOLevelById" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetPOLevelById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPOLevelByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetPOLevelByCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPOLevelByCode" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetPOLevelByCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPOLevelByCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetAllPOLevels_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllPOLevels" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetAllPOLevels_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllPOLevelsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetPOFromById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPOFromById" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetPOFromById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPOFromByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetPOFromByCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPOFromByCode" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetPOFromByCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPOFromByCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetAllPOFroms_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllPOFroms" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetAllPOFroms_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllPOFromsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetPackingTypeById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPackingTypeById" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetPackingTypeById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPackingTypeByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetPackingTypeByCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPackingTypeByCode" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetPackingTypeByCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPackingTypeByCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetAllPackingTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllPackingTypes" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetAllPackingTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllPackingTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetShipmentTermById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetShipmentTermById" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetShipmentTermById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetShipmentTermByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetShipmentTermByCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetShipmentTermByCode" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetShipmentTermByCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetShipmentTermByCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetAllShipmentTerms_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllShipmentTerms" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetAllShipmentTerms_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllShipmentTermsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_UpdateShippingMethod_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateShippingMethod" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_UpdateShippingMethod_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateShippingMethodResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetShippingMethodById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetShippingMethodById" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetShippingMethodById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetShippingMethodByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetShippingMethodByCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetShippingMethodByCode" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetShippingMethodByCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetShippingMethodByCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetAllShippingMethods_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllShippingMethods" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetAllShippingMethods_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllShippingMethodsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_AddPOM_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddPOM" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_AddPOM_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddPOMResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_UpdatePOM_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePOM" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_UpdatePOM_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePOMResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetPOMById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPOMById" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetPOMById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPOMByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetPOByPONo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPOByPONo" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetPOByPONo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPOByPONoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_DeletePOM_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePOM" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_DeletePOM_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePOMResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_UpdatePOApprovedStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePOApprovedStatus" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_UpdatePOApprovedStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePOApprovedStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_IsPONumberExist_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsPONumberExist" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_IsPONumberExist_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsPONumberExistResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_AddPOD_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddPOD" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_AddPOD_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddPODResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_UpdatePOD_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePOD" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_UpdatePOD_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePODResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_AddUpdatePOD_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddUpdatePOD" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_AddUpdatePOD_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddUpdatePODResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetPODById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPODById" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetPODById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPODByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_DeletePOD_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePOD" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_DeletePOD_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePODResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_AddPOSizeD_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddPOSizeD" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_AddPOSizeD_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddPOSizeDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_UpdatePOSizeD_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePOSizeD" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_UpdatePOSizeD_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePOSizeDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetPOSizeDById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPOSizeDById" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetPOSizeDById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPOSizeDByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_AddUpdatePOSizeD_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddUpdatePOSizeD" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_AddUpdatePOSizeD_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddUpdatePOSizeDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_DeletePOSizeD_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePOSizeD" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_DeletePOSizeD_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePOSizeDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_DeletePOSizeDCollection_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePOSizeDCollection" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_DeletePOSizeDCollection_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePOSizeDCollectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_IsItemExistInPO_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsItemExistInPO" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_IsItemExistInPO_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsItemExistInPOResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_IsPackQtyValid_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsPackQtyValid" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_IsPackQtyValid_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsPackQtyValidResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetItemNo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetItemNo" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetItemNo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetItemNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_AddPackingPlanData_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddPackingPlanData" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_AddPackingPlanData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddPackingPlanDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_IsPackingPlanAlreadyProcessed_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsPackingPlanAlreadyProcessed" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_IsPackingPlanAlreadyProcessed_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsPackingPlanAlreadyProcessedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_AddPackingInstructionM_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddPackingInstructionM" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_AddPackingInstructionM_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddPackingInstructionMResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetBoxDataByBarcode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBoxDataByBarcode" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_GetBoxDataByBarcode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBoxDataByBarcodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_SaveBoxPacking_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveBoxPacking" />
+  </wsdl:message>
+  <wsdl:message name="IGPMSService_SaveBoxPacking_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveBoxPackingResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IGPMSService">
+    <wsdl:operation name="AddPackingInstructionD">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/AddPackingInstructionD" message="tns:IGPMSService_AddPackingInstructionD_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/AddPackingInstructionDResponse" message="tns:IGPMSService_AddPackingInstructionD_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLabels_AcdSprt">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/GetLabels_AcdSprt" message="tns:IGPMSService_GetLabels_AcdSprt_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/GetLabels_AcdSprtResponse" message="tns:IGPMSService_GetLabels_AcdSprt_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPackQty">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/GetPackQty" message="tns:IGPMSService_GetPackQty_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/GetPackQtyResponse" message="tns:IGPMSService_GetPackQty_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SkipNGetN_OfCustomerDataWithSearch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/SkipNGetN_OfCustomerDataWithSearch" message="tns:IGPMSService_SkipNGetN_OfCustomerDataWithSearch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/SkipNGetN_OfCustomerDataWithSearchResponse" message="tns:IGPMSService_SkipNGetN_OfCustomerDataWithSearch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SkipNGetN_OfStyleDataWithSearch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/SkipNGetN_OfStyleDataWithSearch" message="tns:IGPMSService_SkipNGetN_OfStyleDataWithSearch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/SkipNGetN_OfStyleDataWithSearchResponse" message="tns:IGPMSService_SkipNGetN_OfStyleDataWithSearch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SkipNGetN_OfSizeDataWithSearch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/SkipNGetN_OfSizeDataWithSearch" message="tns:IGPMSService_SkipNGetN_OfSizeDataWithSearch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/SkipNGetN_OfSizeDataWithSearchResponse" message="tns:IGPMSService_SkipNGetN_OfSizeDataWithSearch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SkipNGetN_OfColorDataWithSearch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/SkipNGetN_OfColorDataWithSearch" message="tns:IGPMSService_SkipNGetN_OfColorDataWithSearch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/SkipNGetN_OfColorDataWithSearchResponse" message="tns:IGPMSService_SkipNGetN_OfColorDataWithSearch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddCarton">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/AddCarton" message="tns:IGPMSService_AddCarton_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/AddCartonResponse" message="tns:IGPMSService_AddCarton_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCarton">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/UpdateCarton" message="tns:IGPMSService_UpdateCarton_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/UpdateCartonResponse" message="tns:IGPMSService_UpdateCarton_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCartonById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/GetCartonById" message="tns:IGPMSService_GetCartonById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/GetCartonByIdResponse" message="tns:IGPMSService_GetCartonById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCartonByCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/GetCartonByCode" message="tns:IGPMSService_GetCartonByCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/GetCartonByCodeResponse" message="tns:IGPMSService_GetCartonByCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCartons">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/GetAllCartons" message="tns:IGPMSService_GetAllCartons_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/GetAllCartonsResponse" message="tns:IGPMSService_GetAllCartons_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddColor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/AddColor" message="tns:IGPMSService_AddColor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/AddColorResponse" message="tns:IGPMSService_AddColor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateColor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/UpdateColor" message="tns:IGPMSService_UpdateColor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/UpdateColorResponse" message="tns:IGPMSService_UpdateColor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetColorById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/GetColorById" message="tns:IGPMSService_GetColorById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/GetColorByIdResponse" message="tns:IGPMSService_GetColorById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetColorByCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/GetColorByCode" message="tns:IGPMSService_GetColorByCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/GetColorByCodeResponse" message="tns:IGPMSService_GetColorByCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllColors">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/GetAllColors" message="tns:IGPMSService_GetAllColors_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/GetAllColorsResponse" message="tns:IGPMSService_GetAllColors_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddCustomer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/AddCustomer" message="tns:IGPMSService_AddCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/AddCustomerResponse" message="tns:IGPMSService_AddCustomer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCustomer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/UpdateCustomer" message="tns:IGPMSService_UpdateCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/UpdateCustomerResponse" message="tns:IGPMSService_UpdateCustomer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/GetCustomerById" message="tns:IGPMSService_GetCustomerById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/GetCustomerByIdResponse" message="tns:IGPMSService_GetCustomerById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerByCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/GetCustomerByCode" message="tns:IGPMSService_GetCustomerByCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/GetCustomerByCodeResponse" message="tns:IGPMSService_GetCustomerByCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCustomers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/GetAllCustomers" message="tns:IGPMSService_GetAllCustomers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/GetAllCustomersResponse" message="tns:IGPMSService_GetAllCustomers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPaymentMode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/AddPaymentMode" message="tns:IGPMSService_AddPaymentMode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/AddPaymentModeResponse" message="tns:IGPMSService_AddPaymentMode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePaymentMode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/UpdatePaymentMode" message="tns:IGPMSService_UpdatePaymentMode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/UpdatePaymentModeResponse" message="tns:IGPMSService_UpdatePaymentMode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPaymentModeById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/GetPaymentModeById" message="tns:IGPMSService_GetPaymentModeById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/GetPaymentModeByIdResponse" message="tns:IGPMSService_GetPaymentModeById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPaymentModeByCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/GetPaymentModeByCode" message="tns:IGPMSService_GetPaymentModeByCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/GetPaymentModeByCodeResponse" message="tns:IGPMSService_GetPaymentModeByCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPaymentModes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/GetAllPaymentModes" message="tns:IGPMSService_GetAllPaymentModes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/GetAllPaymentModesResponse" message="tns:IGPMSService_GetAllPaymentModes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddSize">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/AddSize" message="tns:IGPMSService_AddSize_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/AddSizeResponse" message="tns:IGPMSService_AddSize_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSize">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/UpdateSize" message="tns:IGPMSService_UpdateSize_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/UpdateSizeResponse" message="tns:IGPMSService_UpdateSize_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSizeById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/GetSizeById" message="tns:IGPMSService_GetSizeById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/GetSizeByIdResponse" message="tns:IGPMSService_GetSizeById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSizeByCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/GetSizeByCode" message="tns:IGPMSService_GetSizeByCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/GetSizeByCodeResponse" message="tns:IGPMSService_GetSizeByCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSizes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/GetAllSizes" message="tns:IGPMSService_GetAllSizes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/GetAllSizesResponse" message="tns:IGPMSService_GetAllSizes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddStyle">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/AddStyle" message="tns:IGPMSService_AddStyle_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/AddStyleResponse" message="tns:IGPMSService_AddStyle_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStyle">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/UpdateStyle" message="tns:IGPMSService_UpdateStyle_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/UpdateStyleResponse" message="tns:IGPMSService_UpdateStyle_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStyleById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/GetStyleById" message="tns:IGPMSService_GetStyleById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/GetStyleByIdResponse" message="tns:IGPMSService_GetStyleById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStyleByCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/GetStyleByCode" message="tns:IGPMSService_GetStyleByCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/GetStyleByCodeResponse" message="tns:IGPMSService_GetStyleByCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllStyles">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/GetAllStyles" message="tns:IGPMSService_GetAllStyles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/GetAllStylesResponse" message="tns:IGPMSService_GetAllStyles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddTerm">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/AddTerm" message="tns:IGPMSService_AddTerm_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/AddTermResponse" message="tns:IGPMSService_AddTerm_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTerm">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/UpdateTerm" message="tns:IGPMSService_UpdateTerm_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/UpdateTermResponse" message="tns:IGPMSService_UpdateTerm_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTermById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/GetTermById" message="tns:IGPMSService_GetTermById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/GetTermByIdResponse" message="tns:IGPMSService_GetTermById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTermByCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/GetTermByCode" message="tns:IGPMSService_GetTermByCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/GetTermByCodeResponse" message="tns:IGPMSService_GetTermByCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllTerms">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/GetAllTerms" message="tns:IGPMSService_GetAllTerms_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/GetAllTermsResponse" message="tns:IGPMSService_GetAllTerms_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPOTypeById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/GetPOTypeById" message="tns:IGPMSService_GetPOTypeById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/GetPOTypeByIdResponse" message="tns:IGPMSService_GetPOTypeById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPOTypeByCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/GetPOTypeByCode" message="tns:IGPMSService_GetPOTypeByCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/GetPOTypeByCodeResponse" message="tns:IGPMSService_GetPOTypeByCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPOTypes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/GetAllPOTypes" message="tns:IGPMSService_GetAllPOTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/GetAllPOTypesResponse" message="tns:IGPMSService_GetAllPOTypes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPOLevelById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/GetPOLevelById" message="tns:IGPMSService_GetPOLevelById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/GetPOLevelByIdResponse" message="tns:IGPMSService_GetPOLevelById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPOLevelByCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/GetPOLevelByCode" message="tns:IGPMSService_GetPOLevelByCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/GetPOLevelByCodeResponse" message="tns:IGPMSService_GetPOLevelByCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPOLevels">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/GetAllPOLevels" message="tns:IGPMSService_GetAllPOLevels_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/GetAllPOLevelsResponse" message="tns:IGPMSService_GetAllPOLevels_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPOFromById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/GetPOFromById" message="tns:IGPMSService_GetPOFromById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/GetPOFromByIdResponse" message="tns:IGPMSService_GetPOFromById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPOFromByCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/GetPOFromByCode" message="tns:IGPMSService_GetPOFromByCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/GetPOFromByCodeResponse" message="tns:IGPMSService_GetPOFromByCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPOFroms">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/GetAllPOFroms" message="tns:IGPMSService_GetAllPOFroms_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/GetAllPOFromsResponse" message="tns:IGPMSService_GetAllPOFroms_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPackingTypeById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/GetPackingTypeById" message="tns:IGPMSService_GetPackingTypeById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/GetPackingTypeByIdResponse" message="tns:IGPMSService_GetPackingTypeById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPackingTypeByCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/GetPackingTypeByCode" message="tns:IGPMSService_GetPackingTypeByCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/GetPackingTypeByCodeResponse" message="tns:IGPMSService_GetPackingTypeByCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPackingTypes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/GetAllPackingTypes" message="tns:IGPMSService_GetAllPackingTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/GetAllPackingTypesResponse" message="tns:IGPMSService_GetAllPackingTypes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetShipmentTermById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/GetShipmentTermById" message="tns:IGPMSService_GetShipmentTermById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/GetShipmentTermByIdResponse" message="tns:IGPMSService_GetShipmentTermById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetShipmentTermByCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/GetShipmentTermByCode" message="tns:IGPMSService_GetShipmentTermByCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/GetShipmentTermByCodeResponse" message="tns:IGPMSService_GetShipmentTermByCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllShipmentTerms">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/GetAllShipmentTerms" message="tns:IGPMSService_GetAllShipmentTerms_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/GetAllShipmentTermsResponse" message="tns:IGPMSService_GetAllShipmentTerms_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateShippingMethod">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/UpdateShippingMethod" message="tns:IGPMSService_UpdateShippingMethod_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/UpdateShippingMethodResponse" message="tns:IGPMSService_UpdateShippingMethod_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetShippingMethodById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/GetShippingMethodById" message="tns:IGPMSService_GetShippingMethodById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/GetShippingMethodByIdResponse" message="tns:IGPMSService_GetShippingMethodById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetShippingMethodByCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/GetShippingMethodByCode" message="tns:IGPMSService_GetShippingMethodByCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/GetShippingMethodByCodeResponse" message="tns:IGPMSService_GetShippingMethodByCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllShippingMethods">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/GetAllShippingMethods" message="tns:IGPMSService_GetAllShippingMethods_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/GetAllShippingMethodsResponse" message="tns:IGPMSService_GetAllShippingMethods_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPOM">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/AddPOM" message="tns:IGPMSService_AddPOM_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/AddPOMResponse" message="tns:IGPMSService_AddPOM_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePOM">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/UpdatePOM" message="tns:IGPMSService_UpdatePOM_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/UpdatePOMResponse" message="tns:IGPMSService_UpdatePOM_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPOMById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/GetPOMById" message="tns:IGPMSService_GetPOMById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/GetPOMByIdResponse" message="tns:IGPMSService_GetPOMById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPOByPONo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/GetPOByPONo" message="tns:IGPMSService_GetPOByPONo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/GetPOByPONoResponse" message="tns:IGPMSService_GetPOByPONo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletePOM">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/DeletePOM" message="tns:IGPMSService_DeletePOM_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/DeletePOMResponse" message="tns:IGPMSService_DeletePOM_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePOApprovedStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/UpdatePOApprovedStatus" message="tns:IGPMSService_UpdatePOApprovedStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/UpdatePOApprovedStatusResponse" message="tns:IGPMSService_UpdatePOApprovedStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsPONumberExist">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/IsPONumberExist" message="tns:IGPMSService_IsPONumberExist_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/IsPONumberExistResponse" message="tns:IGPMSService_IsPONumberExist_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPOD">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/AddPOD" message="tns:IGPMSService_AddPOD_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/AddPODResponse" message="tns:IGPMSService_AddPOD_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePOD">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/UpdatePOD" message="tns:IGPMSService_UpdatePOD_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/UpdatePODResponse" message="tns:IGPMSService_UpdatePOD_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddUpdatePOD">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/AddUpdatePOD" message="tns:IGPMSService_AddUpdatePOD_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/AddUpdatePODResponse" message="tns:IGPMSService_AddUpdatePOD_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPODById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/GetPODById" message="tns:IGPMSService_GetPODById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/GetPODByIdResponse" message="tns:IGPMSService_GetPODById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletePOD">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/DeletePOD" message="tns:IGPMSService_DeletePOD_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/DeletePODResponse" message="tns:IGPMSService_DeletePOD_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPOSizeD">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/AddPOSizeD" message="tns:IGPMSService_AddPOSizeD_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/AddPOSizeDResponse" message="tns:IGPMSService_AddPOSizeD_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePOSizeD">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/UpdatePOSizeD" message="tns:IGPMSService_UpdatePOSizeD_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/UpdatePOSizeDResponse" message="tns:IGPMSService_UpdatePOSizeD_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPOSizeDById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/GetPOSizeDById" message="tns:IGPMSService_GetPOSizeDById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/GetPOSizeDByIdResponse" message="tns:IGPMSService_GetPOSizeDById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddUpdatePOSizeD">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/AddUpdatePOSizeD" message="tns:IGPMSService_AddUpdatePOSizeD_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/AddUpdatePOSizeDResponse" message="tns:IGPMSService_AddUpdatePOSizeD_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletePOSizeD">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/DeletePOSizeD" message="tns:IGPMSService_DeletePOSizeD_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/DeletePOSizeDResponse" message="tns:IGPMSService_DeletePOSizeD_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletePOSizeDCollection">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/DeletePOSizeDCollection" message="tns:IGPMSService_DeletePOSizeDCollection_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/DeletePOSizeDCollectionResponse" message="tns:IGPMSService_DeletePOSizeDCollection_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsItemExistInPO">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/IsItemExistInPO" message="tns:IGPMSService_IsItemExistInPO_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/IsItemExistInPOResponse" message="tns:IGPMSService_IsItemExistInPO_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsPackQtyValid">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/IsPackQtyValid" message="tns:IGPMSService_IsPackQtyValid_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/IsPackQtyValidResponse" message="tns:IGPMSService_IsPackQtyValid_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetItemNo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/GetItemNo" message="tns:IGPMSService_GetItemNo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/GetItemNoResponse" message="tns:IGPMSService_GetItemNo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPackingPlanData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/AddPackingPlanData" message="tns:IGPMSService_AddPackingPlanData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/AddPackingPlanDataResponse" message="tns:IGPMSService_AddPackingPlanData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsPackingPlanAlreadyProcessed">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/IsPackingPlanAlreadyProcessed" message="tns:IGPMSService_IsPackingPlanAlreadyProcessed_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/IsPackingPlanAlreadyProcessedResponse" message="tns:IGPMSService_IsPackingPlanAlreadyProcessed_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPackingInstructionM">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/AddPackingInstructionM" message="tns:IGPMSService_AddPackingInstructionM_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/AddPackingInstructionMResponse" message="tns:IGPMSService_AddPackingInstructionM_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBoxDataByBarcode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/GetBoxDataByBarcode" message="tns:IGPMSService_GetBoxDataByBarcode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/GetBoxDataByBarcodeResponse" message="tns:IGPMSService_GetBoxDataByBarcode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveBoxPacking">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGPMSService/SaveBoxPacking" message="tns:IGPMSService_SaveBoxPacking_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGPMSService/SaveBoxPackingResponse" message="tns:IGPMSService_SaveBoxPacking_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IGPMSService" type="tns:IGPMSService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddPackingInstructionD">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/AddPackingInstructionD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLabels_AcdSprt">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/GetLabels_AcdSprt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackQty">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/GetPackQty" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SkipNGetN_OfCustomerDataWithSearch">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/SkipNGetN_OfCustomerDataWithSearch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SkipNGetN_OfStyleDataWithSearch">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/SkipNGetN_OfStyleDataWithSearch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SkipNGetN_OfSizeDataWithSearch">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/SkipNGetN_OfSizeDataWithSearch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SkipNGetN_OfColorDataWithSearch">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/SkipNGetN_OfColorDataWithSearch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCarton">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/AddCarton" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCarton">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/UpdateCarton" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCartonById">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/GetCartonById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCartonByCode">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/GetCartonByCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCartons">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/GetAllCartons" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddColor">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/AddColor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateColor">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/UpdateColor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetColorById">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/GetColorById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetColorByCode">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/GetColorByCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllColors">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/GetAllColors" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCustomer">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/AddCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCustomer">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/UpdateCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerById">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/GetCustomerById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerByCode">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/GetCustomerByCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCustomers">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/GetAllCustomers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPaymentMode">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/AddPaymentMode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePaymentMode">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/UpdatePaymentMode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPaymentModeById">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/GetPaymentModeById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPaymentModeByCode">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/GetPaymentModeByCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPaymentModes">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/GetAllPaymentModes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddSize">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/AddSize" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSize">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/UpdateSize" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSizeById">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/GetSizeById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSizeByCode">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/GetSizeByCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSizes">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/GetAllSizes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddStyle">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/AddStyle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStyle">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/UpdateStyle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStyleById">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/GetStyleById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStyleByCode">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/GetStyleByCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllStyles">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/GetAllStyles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTerm">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/AddTerm" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTerm">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/UpdateTerm" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTermById">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/GetTermById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTermByCode">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/GetTermByCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllTerms">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/GetAllTerms" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPOTypeById">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/GetPOTypeById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPOTypeByCode">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/GetPOTypeByCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPOTypes">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/GetAllPOTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPOLevelById">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/GetPOLevelById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPOLevelByCode">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/GetPOLevelByCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPOLevels">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/GetAllPOLevels" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPOFromById">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/GetPOFromById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPOFromByCode">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/GetPOFromByCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPOFroms">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/GetAllPOFroms" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackingTypeById">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/GetPackingTypeById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackingTypeByCode">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/GetPackingTypeByCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPackingTypes">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/GetAllPackingTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShipmentTermById">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/GetShipmentTermById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShipmentTermByCode">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/GetShipmentTermByCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllShipmentTerms">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/GetAllShipmentTerms" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateShippingMethod">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/UpdateShippingMethod" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShippingMethodById">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/GetShippingMethodById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShippingMethodByCode">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/GetShippingMethodByCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllShippingMethods">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/GetAllShippingMethods" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPOM">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/AddPOM" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePOM">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/UpdatePOM" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPOMById">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/GetPOMById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPOByPONo">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/GetPOByPONo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePOM">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/DeletePOM" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePOApprovedStatus">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/UpdatePOApprovedStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsPONumberExist">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/IsPONumberExist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPOD">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/AddPOD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePOD">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/UpdatePOD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUpdatePOD">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/AddUpdatePOD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPODById">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/GetPODById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePOD">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/DeletePOD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPOSizeD">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/AddPOSizeD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePOSizeD">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/UpdatePOSizeD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPOSizeDById">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/GetPOSizeDById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUpdatePOSizeD">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/AddUpdatePOSizeD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePOSizeD">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/DeletePOSizeD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePOSizeDCollection">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/DeletePOSizeDCollection" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsItemExistInPO">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/IsItemExistInPO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsPackQtyValid">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/IsPackQtyValid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetItemNo">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/GetItemNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPackingPlanData">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/AddPackingPlanData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsPackingPlanAlreadyProcessed">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/IsPackingPlanAlreadyProcessed" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPackingInstructionM">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/AddPackingInstructionM" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBoxDataByBarcode">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/GetBoxDataByBarcode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveBoxPacking">
+      <soap:operation soapAction="http://tempuri.org/IGPMSService/SaveBoxPacking" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="GPMSService">
+    <wsdl:port name="BasicHttpBinding_IGPMSService" binding="tns:BasicHttpBinding_IGPMSService">
+      <soap:address location="http://localhost:63995/GPMSService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

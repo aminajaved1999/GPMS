@@ -1,0 +1,828 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Entities.GPMS" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Entities.GPMS" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:63995/GPMSService.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="PackingInstructionDBo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ColorID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ColorInfoBo" nillable="true" type="tns:ColorInfoBo" />
+      <xs:element minOccurs="0" name="CreatedAt" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreatedByID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="DC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="ItemNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ItemQtyPerCase" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Notes" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PackingInstructionMBo" nillable="true" type="tns:PackingInstructionMBo" />
+      <xs:element minOccurs="0" name="PackingInstructionMID" type="xs:int" />
+      <xs:element minOccurs="0" name="ScanDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="SequenceNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SizeID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="SizeInfoBo" nillable="true" type="tns:SizeInfoBo" />
+      <xs:element minOccurs="0" name="StoreNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StyleID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="StyleInfoBo" nillable="true" type="tns:StyleInfoBo" />
+      <xs:element minOccurs="0" name="UOMID" type="xs:int" />
+      <xs:element minOccurs="0" name="UPC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpdatedAt" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UpdatedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpdatedByID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="UpdatedCount" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PackingInstructionDBo" nillable="true" type="tns:PackingInstructionDBo" />
+  <xs:complexType name="ColorInfoBo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ColorCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ColorName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreatedAt" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreatedByID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CustomerID" type="xs:int" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Notes" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="POSizeDCollection" nillable="true" type="tns:ArrayOfPOSizeDBo" />
+      <xs:element minOccurs="0" name="UpdatedAt" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UpdatedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpdatedByID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="UpdatedCount" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ColorInfoBo" nillable="true" type="tns:ColorInfoBo" />
+  <xs:complexType name="ArrayOfPOSizeDBo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="POSizeDBo" nillable="true" type="tns:POSizeDBo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPOSizeDBo" nillable="true" type="tns:ArrayOfPOSizeDBo" />
+  <xs:complexType name="POSizeDBo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ColorID" type="xs:int" />
+      <xs:element minOccurs="0" name="ColorInfoBo" nillable="true" type="tns:ColorInfoBo" />
+      <xs:element minOccurs="0" name="ComboCode" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CreatedAt" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreatedByID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="IsPilotRun" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ItemNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Notes" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PODBo" nillable="true" type="tns:PODBo" />
+      <xs:element minOccurs="0" name="PODID" type="xs:int" />
+      <xs:element minOccurs="0" name="Price" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Qty" type="xs:int" />
+      <xs:element minOccurs="0" name="SizeID" type="xs:int" />
+      <xs:element minOccurs="0" name="SizeInfoBo" nillable="true" type="tns:SizeInfoBo" />
+      <xs:element minOccurs="0" name="UpdatedAt" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UpdatedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpdatedByID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="UpdatedCount" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="POSizeDBo" nillable="true" type="tns:POSizeDBo" />
+  <xs:complexType name="PODBo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreatedAt" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreatedByID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Notes" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="POMBo" nillable="true" type="tns:POMBo" />
+      <xs:element minOccurs="0" name="POMID" type="xs:int" />
+      <xs:element minOccurs="0" name="POSizeDCollection" nillable="true" type="tns:ArrayOfPOSizeDBo" />
+      <xs:element minOccurs="0" name="StyleID" type="xs:int" />
+      <xs:element minOccurs="0" name="StyleInfoBo" nillable="true" type="tns:StyleInfoBo" />
+      <xs:element minOccurs="0" name="UpdatedAt" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UpdatedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpdatedByID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="UpdatedCount" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PODBo" nillable="true" type="tns:PODBo" />
+  <xs:complexType name="POMBo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ApprovedAt" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ApprovedStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BillTo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClosedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClosingDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreatedAt" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreatedByID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CustomerID" type="xs:int" />
+      <xs:element minOccurs="0" name="CustomerInfoBo" nillable="true" type="tns:CustomerInfoBo" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GarmentDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="LastRevisionDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Notes" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OriginalPONo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PODCollection" nillable="true" type="tns:ArrayOfPODBo" />
+      <xs:element minOccurs="0" name="POFormBo" nillable="true" type="tns:POFromBo" />
+      <xs:element minOccurs="0" name="POFromID" type="xs:int" />
+      <xs:element minOccurs="0" name="POLevelBo" nillable="true" type="tns:POLevelBo" />
+      <xs:element minOccurs="0" name="POLevelID" type="xs:int" />
+      <xs:element minOccurs="0" name="PONo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="POReceivedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="POStartDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="POStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="POTypeBo" nillable="true" type="tns:POTypeBo" />
+      <xs:element minOccurs="0" name="POTypeID" type="xs:int" />
+      <xs:element minOccurs="0" name="PackingTypeBo" nillable="true" type="tns:PackingTypeBo" />
+      <xs:element minOccurs="0" name="PackingTypeID" type="xs:int" />
+      <xs:element minOccurs="0" name="PaymentModeID" type="xs:int" />
+      <xs:element minOccurs="0" name="PaymentModeInfoBo" nillable="true" type="tns:PaymentModeInfoBo" />
+      <xs:element minOccurs="0" name="RivisionNo" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Season" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShipDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ShipRequestDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ShipmentTermBo" nillable="true" type="tns:ShipmentTermBo" />
+      <xs:element minOccurs="0" name="ShipmentTermID" type="xs:int" />
+      <xs:element minOccurs="0" name="ShippingMethodBo" nillable="true" type="tns:ShippingMethodBo" />
+      <xs:element minOccurs="0" name="ShippingMethodID" type="xs:int" />
+      <xs:element minOccurs="0" name="TermID" type="xs:int" />
+      <xs:element minOccurs="0" name="TermInfoBo" nillable="true" type="tns:TermInfoBo" />
+      <xs:element minOccurs="0" name="UpdatedAt" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UpdatedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpdatedByID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="UpdatedCount" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="POMBo" nillable="true" type="tns:POMBo" />
+  <xs:complexType name="CustomerInfoBo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BillingAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CompanyID" type="xs:int" />
+      <xs:element minOccurs="0" name="CompanyInfoBo" nillable="true" type="tns:CompanyInfoBo" />
+      <xs:element minOccurs="0" name="Country" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreatedAt" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreatedByID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CustomerCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EMail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FAX" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Notes" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="POMCollection" nillable="true" type="tns:ArrayOfPOMBo" />
+      <xs:element minOccurs="0" name="PhoneNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PreFix" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShortName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SupplierNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpdatedAt" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UpdatedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpdatedByID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="UpdatedCount" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Zipcode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CustomerInfoBo" nillable="true" type="tns:CustomerInfoBo" />
+  <xs:complexType name="CompanyInfoBo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CompanyCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CompanyName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Country" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreatedAt" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreatedByID" type="xs:int" />
+      <xs:element minOccurs="0" name="CustomerInfoCollection" nillable="true" type="tns:ArrayOfCustomerInfoBo" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DisplayName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FAX" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LogoPath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Notes" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PhoneNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PreFix" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShortName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Since" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpdatedAt" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UpdatedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpdatedByID" type="xs:int" />
+      <xs:element minOccurs="0" name="UpdatedCount" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="WebURL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Zipcode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CompanyInfoBo" nillable="true" type="tns:CompanyInfoBo" />
+  <xs:complexType name="ArrayOfCustomerInfoBo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CustomerInfoBo" nillable="true" type="tns:CustomerInfoBo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCustomerInfoBo" nillable="true" type="tns:ArrayOfCustomerInfoBo" />
+  <xs:complexType name="ArrayOfPOMBo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="POMBo" nillable="true" type="tns:POMBo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPOMBo" nillable="true" type="tns:ArrayOfPOMBo" />
+  <xs:complexType name="ArrayOfPODBo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PODBo" nillable="true" type="tns:PODBo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPODBo" nillable="true" type="tns:ArrayOfPODBo" />
+  <xs:complexType name="POFromBo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreatedAt" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreatedByID" type="xs:int" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Notes" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="POFromCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="POFromName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="POMCollection" nillable="true" type="tns:ArrayOfPOMBo" />
+      <xs:element minOccurs="0" name="UpdatedAt" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UpdatedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpdatedByID" type="xs:int" />
+      <xs:element minOccurs="0" name="UpdatedCount" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="POFromBo" nillable="true" type="tns:POFromBo" />
+  <xs:complexType name="POLevelBo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreatedAt" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreatedByID" type="xs:int" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Notes" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="POLevelCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="POLevelName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="POMCollection" nillable="true" type="tns:ArrayOfPOMBo" />
+      <xs:element minOccurs="0" name="UpdatedAt" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UpdatedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpdatedByID" type="xs:int" />
+      <xs:element minOccurs="0" name="UpdatedCount" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="POLevelBo" nillable="true" type="tns:POLevelBo" />
+  <xs:complexType name="POTypeBo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreatedAt" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreatedByID" type="xs:int" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LeadDays" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Notes" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="POMCollection" nillable="true" type="tns:ArrayOfPOMBo" />
+      <xs:element minOccurs="0" name="POTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="POTypeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpdatedAt" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UpdatedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpdatedByID" type="xs:int" />
+      <xs:element minOccurs="0" name="UpdatedCount" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="POTypeBo" nillable="true" type="tns:POTypeBo" />
+  <xs:complexType name="PackingTypeBo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreatedAt" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreatedByID" type="xs:int" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Notes" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="POMCollection" nillable="true" type="tns:ArrayOfPOMBo" />
+      <xs:element minOccurs="0" name="PackingTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PackingTypeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpdatedAt" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UpdatedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpdatedByID" type="xs:int" />
+      <xs:element minOccurs="0" name="UpdatedCount" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PackingTypeBo" nillable="true" type="tns:PackingTypeBo" />
+  <xs:complexType name="PaymentModeInfoBo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreatedAt" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreatedByID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Days" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Notes" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="POMCollection" nillable="true" type="tns:ArrayOfPOMBo" />
+      <xs:element minOccurs="0" name="PaymentModeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PaymentModeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PenaltyPercentage" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="UpdatedAt" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UpdatedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpdatedByID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="UpdatedCount" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PaymentModeInfoBo" nillable="true" type="tns:PaymentModeInfoBo" />
+  <xs:complexType name="ShipmentTermBo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreatedAt" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreatedByID" type="xs:int" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Notes" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="POMCollection" nillable="true" type="tns:ArrayOfPOMBo" />
+      <xs:element minOccurs="0" name="ShipmentTermCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShipmentTermName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpdatedAt" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UpdatedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpdatedByID" type="xs:int" />
+      <xs:element minOccurs="0" name="UpdatedCount" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ShipmentTermBo" nillable="true" type="tns:ShipmentTermBo" />
+  <xs:complexType name="ShippingMethodBo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreatedAt" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreatedByID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Notes" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="POMCollection" nillable="true" type="tns:ArrayOfPOMBo" />
+      <xs:element minOccurs="0" name="ShippingMethodCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShippingMethodName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpdatedAt" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UpdatedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpdatedByID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="UpdatedCount" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ShippingMethodBo" nillable="true" type="tns:ShippingMethodBo" />
+  <xs:complexType name="TermInfoBo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreatedAt" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreatedByID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Days" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Notes" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="POMCollection" nillable="true" type="tns:ArrayOfPOMBo" />
+      <xs:element minOccurs="0" name="PenaltyPercentage" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="TermCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TermName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpdatedAt" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UpdatedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpdatedByID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="UpdatedCount" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TermInfoBo" nillable="true" type="tns:TermInfoBo" />
+  <xs:complexType name="StyleInfoBo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreatedAt" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreatedByID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CustomerID" type="xs:int" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Notes" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PODCollection" nillable="true" type="tns:ArrayOfPODBo" />
+      <xs:element minOccurs="0" name="StyleCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StyleName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpdatedAt" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UpdatedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpdatedByID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="UpdatedCount" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StyleInfoBo" nillable="true" type="tns:StyleInfoBo" />
+  <xs:complexType name="SizeInfoBo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreatedAt" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreatedByID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Notes" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="POSizeDCollection" nillable="true" type="tns:ArrayOfPOSizeDBo" />
+      <xs:element minOccurs="0" name="SizeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SizeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpdatedAt" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UpdatedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpdatedByID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="UpdatedCount" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SizeInfoBo" nillable="true" type="tns:SizeInfoBo" />
+  <xs:complexType name="PackingInstructionMBo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BoxBarcode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CartonSequence" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CaseCBM" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CaseGrossWeight" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ContainerNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreatedAt" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreatedByID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CustomerID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CustomerInfoBo" nillable="true" type="tns:CustomerInfoBo" />
+      <xs:element minOccurs="0" name="DC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="MarkFor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Notes" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="POMBo" nillable="true" type="tns:POMBo" />
+      <xs:element minOccurs="0" name="POMID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PONo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PackingInstructionDList" nillable="true" type="tns:ArrayOfPackingInstructionDBo" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StoreNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UccColor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UccCoo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UccDept" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UccPO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UccPartners" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UccSize" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UccStyle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UccType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpdatedAt" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UpdatedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpdatedByID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="UpdatedCount" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="UsageIndicator" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PackingInstructionMBo" nillable="true" type="tns:PackingInstructionMBo" />
+  <xs:complexType name="ArrayOfPackingInstructionDBo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PackingInstructionDBo" nillable="true" type="tns:PackingInstructionDBo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPackingInstructionDBo" nillable="true" type="tns:ArrayOfPackingInstructionDBo" />
+  <xs:complexType name="PackingDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DataTable" nillable="true">
+        <xs:complexType>
+          <xs:annotation>
+            <xs:appinfo>
+              <ActualType Name="DataTable" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+            </xs:appinfo>
+          </xs:annotation>
+          <xs:sequence>
+            <xs:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+            <xs:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="DtoStatus" type="tns:DtoStatus" />
+      <xs:element minOccurs="0" name="DtoStatusNotes" nillable="true" type="tns:DtoStatusNotes" />
+      <xs:element minOccurs="0" name="PackingInstructionDBo" nillable="true" type="tns:PackingInstructionDBo" />
+      <xs:element minOccurs="0" name="PackingInstructionDList" nillable="true" type="tns:ArrayOfPackingInstructionDBo" />
+      <xs:element minOccurs="0" name="PackingInstructionMBo" nillable="true" type="tns:PackingInstructionMBo" />
+      <xs:element minOccurs="0" name="PackingInstructionMList" nillable="true" type="tns:ArrayOfPackingInstructionMBo" />
+      <xs:element minOccurs="0" name="PackingPlanDataBo" nillable="true" type="tns:PackingPlanDataBo" />
+      <xs:element minOccurs="0" name="PackingPlanDataList" nillable="true" type="tns:ArrayOfPackingPlanDataBo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PackingDto" nillable="true" type="tns:PackingDto" />
+  <xs:simpleType name="DtoStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Error" />
+      <xs:enumeration value="AlreadyExist" />
+      <xs:enumeration value="Success" />
+      <xs:enumeration value="Failed" />
+      <xs:enumeration value="Duplicate" />
+      <xs:enumeration value="RecordNotAdded" />
+      <xs:enumeration value="RecordNotUpdated" />
+      <xs:enumeration value="RecordNotUpdatedWithoutChanges" />
+      <xs:enumeration value="NoDataFound" />
+      <xs:enumeration value="InvalidDate" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DtoStatus" nillable="true" type="tns:DtoStatus" />
+  <xs:complexType name="DtoStatusNotes">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Exception" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ExtraNotes" nillable="true" type="q1:ArrayOfstring" />
+      <xs:element minOccurs="0" name="StackTrace" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DtoStatusNotes" nillable="true" type="tns:DtoStatusNotes" />
+  <xs:complexType name="ArrayOfPackingInstructionMBo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PackingInstructionMBo" nillable="true" type="tns:PackingInstructionMBo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPackingInstructionMBo" nillable="true" type="tns:ArrayOfPackingInstructionMBo" />
+  <xs:complexType name="PackingPlanDataBo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreatedAt" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreatedByID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CustomerID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="DC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GroupCaseQty" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="GroupNo" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="ItemNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ItemQtyPerCase" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Notes" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PONo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SourceFileName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StoreNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UccCoo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UccPartners" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UccType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpdatedAt" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UpdatedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpdatedByID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="UpdatedCount" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PackingPlanDataBo" nillable="true" type="tns:PackingPlanDataBo" />
+  <xs:complexType name="ArrayOfPackingPlanDataBo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PackingPlanDataBo" nillable="true" type="tns:PackingPlanDataBo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPackingPlanDataBo" nillable="true" type="tns:ArrayOfPackingPlanDataBo" />
+  <xs:complexType name="FetchDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BoardEntries" nillable="true" type="tns:ArrayOfBoardEntryKeyValue" />
+      <xs:element minOccurs="0" name="ColorInfoCollection" nillable="true" type="tns:ArrayOfColorInfoBo" />
+      <xs:element minOccurs="0" name="CompanyInfoCollection" nillable="true" type="tns:ArrayOfCompanyInfoBo" />
+      <xs:element minOccurs="0" name="CustomerInfoCollection" nillable="true" type="tns:ArrayOfCustomerInfoBo" />
+      <xs:element minOccurs="0" name="DtoStatus" type="tns:DtoStatus" />
+      <xs:element minOccurs="0" name="DtoStatusNotes" nillable="true" type="tns:DtoStatusNotes" />
+      <xs:element minOccurs="0" name="SelectedCount" type="xs:int" />
+      <xs:element minOccurs="0" name="SizeInfoCollection" nillable="true" type="tns:ArrayOfSizeInfoBo" />
+      <xs:element minOccurs="0" name="StyleInfoCollection" nillable="true" type="tns:ArrayOfStyleInfoBo" />
+      <xs:element minOccurs="0" name="TotalCount" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FetchDto" nillable="true" type="tns:FetchDto" />
+  <xs:complexType name="ArrayOfBoardEntryKeyValue">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BoardEntryKeyValue" nillable="true" type="tns:BoardEntryKeyValue" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBoardEntryKeyValue" nillable="true" type="tns:ArrayOfBoardEntryKeyValue" />
+  <xs:complexType name="BoardEntryKeyValue">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Value" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BoardEntryKeyValue" nillable="true" type="tns:BoardEntryKeyValue" />
+  <xs:complexType name="ArrayOfColorInfoBo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ColorInfoBo" nillable="true" type="tns:ColorInfoBo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfColorInfoBo" nillable="true" type="tns:ArrayOfColorInfoBo" />
+  <xs:complexType name="ArrayOfCompanyInfoBo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CompanyInfoBo" nillable="true" type="tns:CompanyInfoBo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCompanyInfoBo" nillable="true" type="tns:ArrayOfCompanyInfoBo" />
+  <xs:complexType name="ArrayOfSizeInfoBo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SizeInfoBo" nillable="true" type="tns:SizeInfoBo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSizeInfoBo" nillable="true" type="tns:ArrayOfSizeInfoBo" />
+  <xs:complexType name="ArrayOfStyleInfoBo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StyleInfoBo" nillable="true" type="tns:StyleInfoBo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStyleInfoBo" nillable="true" type="tns:ArrayOfStyleInfoBo" />
+  <xs:complexType name="CartonInfoBo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CBM" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CBMUomID" type="xs:int" />
+      <xs:element minOccurs="0" name="CartonCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CartonName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreatedAt" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreatedByID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CustomerID" type="xs:int" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Height" type="xs:decimal" />
+      <xs:element minOccurs="0" name="HeightUomID" type="xs:int" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Length" type="xs:decimal" />
+      <xs:element minOccurs="0" name="LengthUomID" type="xs:int" />
+      <xs:element minOccurs="0" name="Notes" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Priority" type="xs:int" />
+      <xs:element minOccurs="0" name="UpdatedAt" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UpdatedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpdatedByID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="UpdatedCount" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Weight" type="xs:decimal" />
+      <xs:element minOccurs="0" name="WeightUomID" type="xs:int" />
+      <xs:element minOccurs="0" name="Width" type="xs:decimal" />
+      <xs:element minOccurs="0" name="WidthUomID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CartonInfoBo" nillable="true" type="tns:CartonInfoBo" />
+  <xs:complexType name="CatalogDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CartonInfoBo" nillable="true" type="tns:CartonInfoBo" />
+      <xs:element minOccurs="0" name="CartonInfoCollection" nillable="true" type="tns:ArrayOfCartonInfoBo" />
+      <xs:element minOccurs="0" name="ColorInfoBo" nillable="true" type="tns:ColorInfoBo" />
+      <xs:element minOccurs="0" name="ColorInfoCollection" nillable="true" type="tns:ArrayOfColorInfoBo" />
+      <xs:element minOccurs="0" name="CompanyInfoBo" nillable="true" type="tns:CompanyInfoBo" />
+      <xs:element minOccurs="0" name="CompanyInfoCollection" nillable="true" type="tns:ArrayOfCompanyInfoBo" />
+      <xs:element minOccurs="0" name="CustomerInfoBo" nillable="true" type="tns:CustomerInfoBo" />
+      <xs:element minOccurs="0" name="CustomerInfoCollection" nillable="true" type="tns:ArrayOfCustomerInfoBo" />
+      <xs:element minOccurs="0" name="DtoStatus" type="tns:DtoStatus" />
+      <xs:element minOccurs="0" name="DtoStatusNotes" nillable="true" type="tns:DtoStatusNotes" />
+      <xs:element minOccurs="0" name="POFormBo" nillable="true" type="tns:POFromBo" />
+      <xs:element minOccurs="0" name="POFormCollection" nillable="true" type="tns:ArrayOfPOFromBo" />
+      <xs:element minOccurs="0" name="POLevelBo" nillable="true" type="tns:POLevelBo" />
+      <xs:element minOccurs="0" name="POLevelCollection" nillable="true" type="tns:ArrayOfPOLevelBo" />
+      <xs:element minOccurs="0" name="POMBo" nillable="true" type="tns:POMBo" />
+      <xs:element minOccurs="0" name="POMCollection" nillable="true" type="tns:ArrayOfPOMBo" />
+      <xs:element minOccurs="0" name="POTypeBo" nillable="true" type="tns:POTypeBo" />
+      <xs:element minOccurs="0" name="POTypeCollection" nillable="true" type="tns:ArrayOfPOTypeBo" />
+      <xs:element minOccurs="0" name="PackingInstructionDBo" nillable="true" type="tns:PackingInstructionDBo" />
+      <xs:element minOccurs="0" name="PackingInstructionDCollection" nillable="true" type="tns:ArrayOfPackingInstructionDBo" />
+      <xs:element minOccurs="0" name="PackingInstructionMBo" nillable="true" type="tns:PackingInstructionMBo" />
+      <xs:element minOccurs="0" name="PackingInstructionMCollection" nillable="true" type="tns:ArrayOfPackingInstructionMBo" />
+      <xs:element minOccurs="0" name="PackingPlanDataBo" nillable="true" type="tns:PackingPlanDataBo" />
+      <xs:element minOccurs="0" name="PackingPlanDataCollection" nillable="true" type="tns:ArrayOfPackingPlanDataBo" />
+      <xs:element minOccurs="0" name="PackingTypeBo" nillable="true" type="tns:PackingTypeBo" />
+      <xs:element minOccurs="0" name="PackingTypeCollection" nillable="true" type="tns:ArrayOfPackingTypeBo" />
+      <xs:element minOccurs="0" name="PaymentModeInfoBo" nillable="true" type="tns:PaymentModeInfoBo" />
+      <xs:element minOccurs="0" name="PaymentModeInfoCollection" nillable="true" type="tns:ArrayOfPaymentModeInfoBo" />
+      <xs:element minOccurs="0" name="ShipmentTermBo" nillable="true" type="tns:ShipmentTermBo" />
+      <xs:element minOccurs="0" name="ShipmentTermCollection" nillable="true" type="tns:ArrayOfShipmentTermBo" />
+      <xs:element minOccurs="0" name="ShippingMethodBo" nillable="true" type="tns:ShippingMethodBo" />
+      <xs:element minOccurs="0" name="ShippingMethodCollection" nillable="true" type="tns:ArrayOfShippingMethodBo" />
+      <xs:element minOccurs="0" name="SizeInfoBo" nillable="true" type="tns:SizeInfoBo" />
+      <xs:element minOccurs="0" name="SizeInfoCollection" nillable="true" type="tns:ArrayOfSizeInfoBo" />
+      <xs:element minOccurs="0" name="StyleInfoBo" nillable="true" type="tns:StyleInfoBo" />
+      <xs:element minOccurs="0" name="StyleInfoCollection" nillable="true" type="tns:ArrayOfStyleInfoBo" />
+      <xs:element minOccurs="0" name="TermInfoBo" nillable="true" type="tns:TermInfoBo" />
+      <xs:element minOccurs="0" name="TermInfoCollection" nillable="true" type="tns:ArrayOfTermInfoBo" />
+      <xs:element minOccurs="0" name="UOMBo" nillable="true" type="tns:UOMBo" />
+      <xs:element minOccurs="0" name="UOMCollection" nillable="true" type="tns:ArrayOfUOMBo" />
+      <xs:element minOccurs="0" name="UserInfoBo" nillable="true" type="tns:UserInfoBo" />
+      <xs:element minOccurs="0" name="UserInfoCollection" nillable="true" type="tns:ArrayOfUserInfoBo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CatalogDto" nillable="true" type="tns:CatalogDto" />
+  <xs:complexType name="ArrayOfCartonInfoBo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CartonInfoBo" nillable="true" type="tns:CartonInfoBo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCartonInfoBo" nillable="true" type="tns:ArrayOfCartonInfoBo" />
+  <xs:complexType name="ArrayOfPOFromBo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="POFromBo" nillable="true" type="tns:POFromBo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPOFromBo" nillable="true" type="tns:ArrayOfPOFromBo" />
+  <xs:complexType name="ArrayOfPOLevelBo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="POLevelBo" nillable="true" type="tns:POLevelBo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPOLevelBo" nillable="true" type="tns:ArrayOfPOLevelBo" />
+  <xs:complexType name="ArrayOfPOTypeBo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="POTypeBo" nillable="true" type="tns:POTypeBo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPOTypeBo" nillable="true" type="tns:ArrayOfPOTypeBo" />
+  <xs:complexType name="ArrayOfPackingTypeBo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PackingTypeBo" nillable="true" type="tns:PackingTypeBo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPackingTypeBo" nillable="true" type="tns:ArrayOfPackingTypeBo" />
+  <xs:complexType name="ArrayOfPaymentModeInfoBo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PaymentModeInfoBo" nillable="true" type="tns:PaymentModeInfoBo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPaymentModeInfoBo" nillable="true" type="tns:ArrayOfPaymentModeInfoBo" />
+  <xs:complexType name="ArrayOfShipmentTermBo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ShipmentTermBo" nillable="true" type="tns:ShipmentTermBo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfShipmentTermBo" nillable="true" type="tns:ArrayOfShipmentTermBo" />
+  <xs:complexType name="ArrayOfShippingMethodBo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ShippingMethodBo" nillable="true" type="tns:ShippingMethodBo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfShippingMethodBo" nillable="true" type="tns:ArrayOfShippingMethodBo" />
+  <xs:complexType name="ArrayOfTermInfoBo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TermInfoBo" nillable="true" type="tns:TermInfoBo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTermInfoBo" nillable="true" type="tns:ArrayOfTermInfoBo" />
+  <xs:complexType name="UOMBo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreatedAt" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreatedByID" type="xs:int" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Notes" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Prefix" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UOM1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UOMCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpdatedAt" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UpdatedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpdatedByID" type="xs:int" />
+      <xs:element minOccurs="0" name="UpdatedCount" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UOMBo" nillable="true" type="tns:UOMBo" />
+  <xs:complexType name="ArrayOfUOMBo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UOMBo" nillable="true" type="tns:UOMBo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUOMBo" nillable="true" type="tns:ArrayOfUOMBo" />
+  <xs:complexType name="UserInfoBo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreatedAt" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FullName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Notes" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserInfoBo" nillable="true" type="tns:UserInfoBo" />
+  <xs:complexType name="ArrayOfUserInfoBo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserInfoBo" nillable="true" type="tns:UserInfoBo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserInfoBo" nillable="true" type="tns:ArrayOfUserInfoBo" />
+  <xs:complexType name="OrderDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DtoStatus" type="tns:DtoStatus" />
+      <xs:element minOccurs="0" name="DtoStatusNotes" nillable="true" type="tns:DtoStatusNotes" />
+      <xs:element minOccurs="0" name="PODBo" nillable="true" type="tns:PODBo" />
+      <xs:element minOccurs="0" name="POMBo" nillable="true" type="tns:POMBo" />
+      <xs:element minOccurs="0" name="POSizeDBo" nillable="true" type="tns:POSizeDBo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OrderDto" nillable="true" type="tns:OrderDto" />
+  <xs:complexType name="POApprovalStatusBo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Notes" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="POMID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Remarks" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StatusAt" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="StatusBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StatusByID" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="POApprovalStatusBo" nillable="true" type="tns:POApprovalStatusBo" />
+  <xs:complexType name="ValidationDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DtoStatus" type="tns:DtoStatus" />
+      <xs:element minOccurs="0" name="DtoStatusNotes" nillable="true" type="tns:DtoStatusNotes" />
+      <xs:element minOccurs="0" name="IsExist" nillable="true" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ValidationDto" nillable="true" type="tns:ValidationDto" />
+</xs:schema>

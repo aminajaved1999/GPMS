@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:63995/GPMSService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Entities.GPMS" />
+  <xs:element name="SkipNGetN_OfCustomerDataWithSearch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pCompanyID" type="xs:int" />
+        <xs:element minOccurs="0" name="pIsActive" nillable="true" type="xs:boolean" />
+        <xs:element minOccurs="0" name="pSearchTxt" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pSkipNo" type="xs:int" />
+        <xs:element minOccurs="0" name="pTakeNo" nillable="true" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SkipNGetN_OfCustomerDataWithSearchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Entities.GPMS" minOccurs="0" name="SkipNGetN_OfCustomerDataWithSearchResult" nillable="true" type="q1:FetchDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SkipNGetN_OfStyleDataWithSearch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pCustomerID" type="xs:int" />
+        <xs:element minOccurs="0" name="pIsActive" nillable="true" type="xs:boolean" />
+        <xs:element minOccurs="0" name="pSearchTxt" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pSkipNo" type="xs:int" />
+        <xs:element minOccurs="0" name="pTakeNo" nillable="true" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SkipNGetN_OfStyleDataWithSearchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Entities.GPMS" minOccurs="0" name="SkipNGetN_OfStyleDataWithSearchResult" nillable="true" type="q2:FetchDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SkipNGetN_OfSizeDataWithSearch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pCustomerID" type="xs:int" />
+        <xs:element minOccurs="0" name="pIsActive" nillable="true" type="xs:boolean" />
+        <xs:element minOccurs="0" name="pSearchTxt" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pSkipNo" type="xs:int" />
+        <xs:element minOccurs="0" name="pTakeNo" nillable="true" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SkipNGetN_OfSizeDataWithSearchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Entities.GPMS" minOccurs="0" name="SkipNGetN_OfSizeDataWithSearchResult" nillable="true" type="q3:FetchDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SkipNGetN_OfColorDataWithSearch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pCustomerID" type="xs:int" />
+        <xs:element minOccurs="0" name="pIsActive" nillable="true" type="xs:boolean" />
+        <xs:element minOccurs="0" name="pSearchTxt" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pSkipNo" type="xs:int" />
+        <xs:element minOccurs="0" name="pTakeNo" nillable="true" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SkipNGetN_OfColorDataWithSearchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Entities.GPMS" minOccurs="0" name="SkipNGetN_OfColorDataWithSearchResult" nillable="true" type="q4:FetchDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

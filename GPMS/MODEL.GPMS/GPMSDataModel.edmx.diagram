@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e940d113926142d980c9163264d830d2" Name="Diagram1" ZoomLevel="99">
+        <EntityTypeShape EntityType="GPMSDataModel.AppActionGroup" Width="1.5" PointX="11.75" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="GPMSDataModel.AppActionGroupAccess" Width="1.5" PointX="14" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GPMSDataModel.AppFormAction" Width="1.5" PointX="11.75" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GPMSDataModel.AppMenu" Width="1.5" PointX="7.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GPMSDataModel.AppMenuGroup" Width="1.5" PointX="7.75" PointY="16.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="GPMSDataModel.AppMenuGroupAccess" Width="1.5" PointX="10" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GPMSDataModel.AppUserCompanyAccess" Width="1.5" PointX="12.75" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GPMSDataModel.CartonInfo" Width="1.5" PointX="13.75" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GPMSDataModel.ColorInfo" Width="1.5" PointX="5.25" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GPMSDataModel.CompanyInfo" Width="1.5" PointX="0.75" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GPMSDataModel.CustomerInfo" Width="1.5" PointX="3" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GPMSDataModel.PackingInstructionD" Width="1.5" PointX="15.75" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GPMSDataModel.PackingInstructionM" Width="1.5" PointX="15.75" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GPMSDataModel.PackingPlanData" Width="1.5" PointX="17.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GPMSDataModel.PackingType" Width="1.5" PointX="3" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GPMSDataModel.PaymentModeInfo" Width="1.5" PointX="3" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GPMSDataModel.POD" Width="1.5" PointX="7.5" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="GPMSDataModel.POForm" Width="1.5" PointX="3" PointY="20.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="GPMSDataModel.POLevel" Width="1.5" PointX="3" PointY="24.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="GPMSDataModel.POM" Width="1.5" PointX="5.25" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="GPMSDataModel.POSizeD" Width="1.5" PointX="9.75" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GPMSDataModel.POType" Width="1.5" PointX="3" PointY="28.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="GPMSDataModel.ShipmentTerm" Width="1.5" PointX="3" PointY="32.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GPMSDataModel.ShippingMethod" Width="1.5" PointX="3" PointY="36.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GPMSDataModel.SizeInfo" Width="1.5" PointX="7.5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GPMSDataModel.StyleInfo" Width="1.5" PointX="5.25" PointY="18" IsExpanded="true" />
+        <EntityTypeShape EntityType="GPMSDataModel.TermInfo" Width="1.5" PointX="3" PointY="40.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GPMSDataModel.UOM" Width="1.5" PointX="17.75" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GPMSDataModel.UserInfo" Width="1.5" PointX="17.75" PointY="14.5" IsExpanded="true" />
+        <AssociationConnector Association="GPMSDataModel.FK_AppActionGroupAccess_AppActionGroup" ManuallyRouted="false" />
+        <AssociationConnector Association="GPMSDataModel.FK_AppActionGroupAccess_AppFormAction" ManuallyRouted="false" />
+        <AssociationConnector Association="GPMSDataModel.FK_AppMenuGroupAccess_AppMenu" ManuallyRouted="false" />
+        <AssociationConnector Association="GPMSDataModel.FK_AppMenuGroupAccess_AppMenuGroups" ManuallyRouted="false" />
+        <AssociationConnector Association="GPMSDataModel.FK_POD_ColorInfo" ManuallyRouted="false" />
+        <AssociationConnector Association="GPMSDataModel.FK_POSizeD_ColorInfo" ManuallyRouted="false" />
+        <AssociationConnector Association="GPMSDataModel.FK_CustomerInfo_CompanyInfo" ManuallyRouted="false" />
+        <AssociationConnector Association="GPMSDataModel.FK_POM_CustomerInfo" ManuallyRouted="false" />
+        <AssociationConnector Association="GPMSDataModel.FK_POM_PackingType" ManuallyRouted="false" />
+        <AssociationConnector Association="GPMSDataModel.FK_POM_PaymentModeInfo" ManuallyRouted="false" />
+        <AssociationConnector Association="GPMSDataModel.FK_POD_POM" ManuallyRouted="false" />
+        <AssociationConnector Association="GPMSDataModel.FK_POD_StyleInfo" ManuallyRouted="false" />
+        <AssociationConnector Association="GPMSDataModel.FK_POSizeD_POD" ManuallyRouted="false" />
+        <AssociationConnector Association="GPMSDataModel.FK_POM_POForm" ManuallyRouted="false" />
+        <AssociationConnector Association="GPMSDataModel.FK_POM_POLevel" ManuallyRouted="false" />
+        <AssociationConnector Association="GPMSDataModel.FK_POM_POType" ManuallyRouted="false" />
+        <AssociationConnector Association="GPMSDataModel.FK_POM_ShipmentTerm" ManuallyRouted="false" />
+        <AssociationConnector Association="GPMSDataModel.FK_POM_ShippingMethod" ManuallyRouted="false" />
+        <AssociationConnector Association="GPMSDataModel.FK_POM_TermInfo" ManuallyRouted="false" />
+        <AssociationConnector Association="GPMSDataModel.FK_POSizeD_SizeInfo" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

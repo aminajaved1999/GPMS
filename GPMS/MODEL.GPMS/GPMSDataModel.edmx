@@ -1,0 +1,2550 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="GPMSDataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AppActionGroup">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ActionGroup_No" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="ActionGroupName" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="1000" />
+          <Property Name="Status" Type="bit" Nullable="false" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="UpdatedAt" Type="datetime" />
+          <Property Name="Notes" Type="varchar" MaxLength="1000" />
+        </EntityType>
+        <EntityType Name="AppActionGroupAccess">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AppActionGroupID" Type="int" Nullable="false" />
+          <Property Name="AppFormActionID" Type="int" Nullable="false" />
+          <Property Name="Status" Type="bit" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="1000" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="UpdatedAt" Type="datetime" />
+          <Property Name="Notes" Type="varchar" MaxLength="1000" />
+        </EntityType>
+        <EntityType Name="AppFormAction">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FormActionNo" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="FormActionName" Type="varchar" MaxLength="500" />
+          <Property Name="ControlName" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="FormTitle" Type="varchar" MaxLength="500" />
+          <Property Name="ParentID" Type="int" />
+          <Property Name="FormBehaviour" Type="varchar" MaxLength="500" />
+          <Property Name="ParentControl" Type="varchar" MaxLength="500" />
+          <Property Name="ControlType" Type="varchar" MaxLength="500" />
+          <Property Name="Action" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="1000" />
+          <Property Name="Status" Type="bit" Nullable="false" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="UpdatedAt" Type="datetime" />
+          <Property Name="Notes" Type="varchar" MaxLength="1000" />
+        </EntityType>
+        <EntityType Name="AppMenu">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MenuNo" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="MenuName" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="MenuTitle" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="ParentID" Type="int" />
+          <Property Name="MenuLevel" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="1000" />
+          <Property Name="Status" Type="bit" Nullable="false" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="UpdatedAt" Type="datetime" />
+          <Property Name="Notes" Type="varchar" MaxLength="1000" />
+        </EntityType>
+        <EntityType Name="AppMenuGroup">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MenuGroup_No" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="MenuGroupName" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="1000" />
+          <Property Name="Status" Type="bit" Nullable="false" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="UpdatedAt" Type="datetime" />
+          <Property Name="Notes" Type="varchar" MaxLength="1000" />
+        </EntityType>
+        <EntityType Name="AppMenuGroupAccess">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AppMenuGroupID" Type="int" Nullable="false" />
+          <Property Name="AppMenuID" Type="int" Nullable="false" />
+          <Property Name="Status" Type="bit" Nullable="false" />
+          <Property Name="IsVisible" Type="bit" Nullable="false" />
+          <Property Name="IsEnable" Type="bit" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="1000" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="UpdatedAt" Type="datetime" />
+          <Property Name="Notes" Type="varchar" MaxLength="1000" />
+        </EntityType>
+        <EntityType Name="AppUserCompanyAccess">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="CompanyID" Type="int" Nullable="false" />
+          <Property Name="AppMenuGroupID" Type="int" Nullable="false" />
+          <Property Name="AppActionGroupID" Type="int" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="1000" />
+          <Property Name="Status" Type="bit" Nullable="false" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="UpdatedAt" Type="datetime" />
+          <Property Name="Notes" Type="varchar" MaxLength="1000" />
+        </EntityType>
+        <EntityType Name="CartonInfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CustomerID" Type="int" Nullable="false" />
+          <Property Name="CartonCode" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="CartonName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Length" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Width" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Height" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Weight" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="CBM" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="LengthUomID" Type="int" Nullable="false" />
+          <Property Name="WidthUomID" Type="int" Nullable="false" />
+          <Property Name="HeightUomID" Type="int" Nullable="false" />
+          <Property Name="WeightUomID" Type="int" Nullable="false" />
+          <Property Name="CBMUomID" Type="int" Nullable="false" />
+          <Property Name="Priority" Type="int" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="250" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="UpdatedAt" Type="datetime" />
+          <Property Name="UpdatedCount" Type="int" />
+          <Property Name="Notes" Type="varchar" MaxLength="2000" />
+        </EntityType>
+        <EntityType Name="ColorInfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CustomerID" Type="int" Nullable="false" />
+          <Property Name="ColorCode" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="ColorName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="250" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="UpdatedAt" Type="datetime" />
+          <Property Name="UpdatedCount" Type="int" />
+          <Property Name="Notes" Type="varchar" MaxLength="2000" />
+        </EntityType>
+        <EntityType Name="CompanyInfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CompanyCode" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="CompanyName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ShortName" Type="varchar" MaxLength="50" />
+          <Property Name="DisplayName" Type="varchar" MaxLength="50" />
+          <Property Name="PreFix" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="FAX" Type="varchar" MaxLength="50" />
+          <Property Name="WebURL" Type="varchar" MaxLength="50" />
+          <Property Name="Address" Type="varchar" MaxLength="100" />
+          <Property Name="Country" Type="varchar" MaxLength="50" />
+          <Property Name="State" Type="varchar" MaxLength="50" />
+          <Property Name="City" Type="varchar" MaxLength="50" />
+          <Property Name="Zipcode" Type="varchar" MaxLength="10" />
+          <Property Name="PhoneNo" Type="varchar" MaxLength="50" />
+          <Property Name="LogoPath" Type="varchar" MaxLength="50" />
+          <Property Name="Description" Type="varchar" MaxLength="500" />
+          <Property Name="Since" Type="varchar" MaxLength="4" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="UpdatedAt" Type="datetime" />
+          <Property Name="UpdatedCount" Type="int" />
+          <Property Name="Notes" Type="varchar" MaxLength="2000" />
+        </EntityType>
+        <EntityType Name="CustomerInfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CompanyID" Type="int" Nullable="false" />
+          <Property Name="CustomerCode" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="CustomerName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="ShortName" Type="varchar" MaxLength="30" />
+          <Property Name="PreFix" Type="varchar" MaxLength="5" />
+          <Property Name="Address" Type="varchar" MaxLength="300" />
+          <Property Name="BillingAddress" Type="varchar" MaxLength="300" />
+          <Property Name="PhoneNo" Type="varchar" MaxLength="50" />
+          <Property Name="EMail" Type="varchar" MaxLength="50" />
+          <Property Name="FAX" Type="varchar" MaxLength="50" />
+          <Property Name="Country" Type="varchar" MaxLength="30" />
+          <Property Name="State" Type="varchar" MaxLength="30" />
+          <Property Name="City" Type="varchar" MaxLength="30" />
+          <Property Name="Zipcode" Type="varchar" MaxLength="10" />
+          <Property Name="Description" Type="varchar" MaxLength="250" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="UpdatedAt" Type="datetime" />
+          <Property Name="UpdatedCount" Type="int" />
+          <Property Name="Notes" Type="varchar" MaxLength="2000" />
+        </EntityType>
+        <EntityType Name="PackingInstructionD">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PackingInstructionMID" Type="int" Nullable="false" />
+          <Property Name="ItemNo" Type="varchar" MaxLength="30" />
+          <Property Name="UPC" Type="varchar" MaxLength="30" />
+          <Property Name="UOMID" Type="int" Nullable="false" />
+          <Property Name="Color" Type="nchar" MaxLength="10" />
+          <Property Name="Style" Type="nchar" MaxLength="10" />
+          <Property Name="Size" Type="nchar" MaxLength="10" />
+          <Property Name="SizePackPCsQty" Type="int" />
+          <Property Name="SequenceNo" Type="nchar" MaxLength="10" />
+          <Property Name="StoreNo" Type="nchar" MaxLength="10" />
+          <Property Name="DC" Type="nchar" MaxLength="10" />
+          <Property Name="ScanDate" Type="datetime" />
+          <Property Name="Description" Type="varchar" MaxLength="250" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="UpdatedAt" Type="datetime" />
+          <Property Name="UpdatedCount" Type="int" />
+          <Property Name="Notes" Type="varchar" MaxLength="2000" />
+        </EntityType>
+        <EntityType Name="PackingInstructionM">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CustomerID" Type="int" />
+          <Property Name="OrderID" Type="int" />
+          <Property Name="PONo" Type="varchar" MaxLength="50" />
+          <Property Name="Status" Type="varchar" MaxLength="1" />
+          <Property Name="BoxBarcode" Type="varchar" MaxLength="30" />
+          <Property Name="CaseGrossWeight" Type="numeric" Precision="18" Scale="4" />
+          <Property Name="CaseCBM" Type="numeric" Precision="18" Scale="4" />
+          <Property Name="ContainerNo" Type="varchar" MaxLength="30" />
+          <Property Name="CartonSequence" Type="int" />
+          <Property Name="MarkFor" Type="varchar" MaxLength="10" />
+          <Property Name="StoreNo" Type="varchar" MaxLength="10" />
+          <Property Name="DC" Type="varchar" MaxLength="10" />
+          <Property Name="UsageIndicator" Type="varchar" MaxLength="5" />
+          <Property Name="UccPO" Type="varchar" MaxLength="50" />
+          <Property Name="UccDept" Type="varchar" MaxLength="10" />
+          <Property Name="UccStyle" Type="varchar" MaxLength="30" />
+          <Property Name="UccColor" Type="varchar" MaxLength="50" />
+          <Property Name="UccSize" Type="varchar" MaxLength="20" />
+          <Property Name="UccPartners" Type="varchar" MaxLength="50" />
+          <Property Name="UccType" Type="varchar" MaxLength="30" />
+          <Property Name="UccCoo" Type="varchar" MaxLength="20" />
+          <Property Name="Description" Type="varchar" MaxLength="250" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="UpdatedAt" Type="datetime" />
+          <Property Name="UpdatedCount" Type="int" />
+          <Property Name="Notes" Type="varchar" MaxLength="2000" />
+        </EntityType>
+        <EntityType Name="PackingPlanData">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CustomerID" Type="int" />
+          <Property Name="SourceFileName" Type="varchar" MaxLength="50" />
+          <Property Name="PONo" Type="varchar" MaxLength="50" />
+          <Property Name="GroupNo" Type="int" />
+          <Property Name="GroupCartonQty" Type="int" />
+          <Property Name="PCsPerCarton" Type="int" />
+          <Property Name="Color" Type="varchar" MaxLength="50" />
+          <Property Name="Style" Type="varchar" MaxLength="30" />
+          <Property Name="Size" Type="varchar" MaxLength="20" />
+          <Property Name="SizePackPCsQty" Type="int" />
+          <Property Name="UPC" Type="varchar" MaxLength="30" />
+          <Property Name="StoreNo" Type="varchar" MaxLength="10" />
+          <Property Name="DC" Type="varchar" MaxLength="10" />
+          <Property Name="UccPartners" Type="varchar" MaxLength="50" />
+          <Property Name="UccType" Type="varchar" MaxLength="30" />
+          <Property Name="UccCoo" Type="varchar" MaxLength="20" />
+          <Property Name="Description" Type="varchar" MaxLength="250" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="UpdatedAt" Type="datetime" />
+          <Property Name="UpdatedCount" Type="int" />
+          <Property Name="Notes" Type="varchar" MaxLength="2000" />
+        </EntityType>
+        <EntityType Name="PackingType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PackingTypeCode" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="PackingTypeName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="250" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="UpdatedAt" Type="datetime" />
+          <Property Name="UpdatedCount" Type="int" />
+          <Property Name="Notes" Type="varchar" MaxLength="2000" />
+        </EntityType>
+        <EntityType Name="PaymentModeInfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PaymentModeCode" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="PaymentModeName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Days" Type="int" />
+          <Property Name="PenaltyPercentage" Type="int" />
+          <Property Name="Description" Type="varchar" MaxLength="250" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="UpdatedAt" Type="datetime" />
+          <Property Name="UpdatedCount" Type="int" />
+          <Property Name="Notes" Type="varchar" MaxLength="2000" />
+        </EntityType>
+        <EntityType Name="POD">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="POMID" Type="int" Nullable="false" />
+          <Property Name="StyleID" Type="int" Nullable="false" />
+          <Property Name="ColorID" Type="int" Nullable="false" />
+          <Property Name="ComboCode" Type="int" />
+          <Property Name="IsPilotRun" Type="bit" />
+          <Property Name="Description" Type="varchar" MaxLength="250" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="UpdatedAt" Type="datetime" />
+          <Property Name="UpdatedCount" Type="int" />
+          <Property Name="Notes" Type="varchar" MaxLength="2000" />
+        </EntityType>
+        <EntityType Name="POForm">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="POFormCode" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="POFormName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="250" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="UpdatedAt" Type="datetime" />
+          <Property Name="UpdatedCount" Type="int" />
+          <Property Name="Notes" Type="varchar" MaxLength="2000" />
+        </EntityType>
+        <EntityType Name="POLevel">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="POLevelCode" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="POLevelName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="250" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="UpdatedAt" Type="datetime" />
+          <Property Name="UpdatedCount" Type="int" />
+          <Property Name="Notes" Type="varchar" MaxLength="2000" />
+        </EntityType>
+        <EntityType Name="POM">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CustomerID" Type="int" Nullable="false" />
+          <Property Name="PONo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="OriginalPONo" Type="varchar" MaxLength="50" />
+          <Property Name="POReceivedDate" Type="date" Nullable="false" />
+          <Property Name="PaymentModeID" Type="int" Nullable="false" />
+          <Property Name="TermID" Type="int" Nullable="false" />
+          <Property Name="ShippingMethodID" Type="int" Nullable="false" />
+          <Property Name="ShipmentTermID" Type="int" Nullable="false" />
+          <Property Name="POFormID" Type="int" Nullable="false" />
+          <Property Name="POTypeID" Type="int" Nullable="false" />
+          <Property Name="POLevelID" Type="int" Nullable="false" />
+          <Property Name="PackingTypeID" Type="int" Nullable="false" />
+          <Property Name="POStartDate" Type="date" />
+          <Property Name="POStatus" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="GarmentDescription" Type="varchar" MaxLength="50" />
+          <Property Name="BillTo" Type="varchar" MaxLength="50" />
+          <Property Name="Season" Type="varchar" MaxLength="50" />
+          <Property Name="RivisionNo" Type="int" />
+          <Property Name="LastRevisionDate" Type="datetime" />
+          <Property Name="ClosingDate" Type="nchar" MaxLength="10" />
+          <Property Name="ClosedBy" Type="varchar" MaxLength="50" />
+          <Property Name="ShipDate" Type="date" />
+          <Property Name="ShipRequestDate" Type="date" />
+          <Property Name="Description" Type="varchar" MaxLength="250" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="UpdatedAt" Type="datetime" />
+          <Property Name="UpdatedCount" Type="int" />
+          <Property Name="Notes" Type="varchar" MaxLength="2000" />
+        </EntityType>
+        <EntityType Name="POSizeD">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PODID" Type="int" Nullable="false" />
+          <Property Name="ColorID" Type="int" Nullable="false" />
+          <Property Name="SizeID" Type="int" Nullable="false" />
+          <Property Name="Qty" Type="int" Nullable="false" />
+          <Property Name="Price" Type="numeric" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="250" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="UpdatedAt" Type="datetime" />
+          <Property Name="UpdatedCount" Type="int" />
+          <Property Name="Notes" Type="varchar" MaxLength="2000" />
+        </EntityType>
+        <EntityType Name="POType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="POTypeCode" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="POTypeName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="LeadDays" Type="int" />
+          <Property Name="Description" Type="varchar" MaxLength="250" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="UpdatedAt" Type="datetime" />
+          <Property Name="UpdatedCount" Type="int" />
+          <Property Name="Notes" Type="varchar" MaxLength="2000" />
+        </EntityType>
+        <EntityType Name="ShipmentTerm">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ShipmentTermCode" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="ShipmentTermName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="250" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="UpdatedAt" Type="datetime" />
+          <Property Name="UpdatedCount" Type="int" />
+          <Property Name="Notes" Type="varchar" MaxLength="2000" />
+        </EntityType>
+        <EntityType Name="ShippingMethod">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ShippingMethodCode" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="ShippingMethodName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="250" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="UpdatedAt" Type="datetime" />
+          <Property Name="UpdatedCount" Type="int" />
+          <Property Name="Notes" Type="varchar" MaxLength="2000" />
+        </EntityType>
+        <EntityType Name="SizeInfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CustomerID" Type="int" Nullable="false" />
+          <Property Name="SizeCode" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="SizeName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="250" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="UpdatedAt" Type="datetime" />
+          <Property Name="UpdatedCount" Type="int" />
+          <Property Name="Notes" Type="varchar" MaxLength="2000" />
+        </EntityType>
+        <EntityType Name="StyleInfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CustomerID" Type="int" Nullable="false" />
+          <Property Name="StyleCode" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="StyleName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="250" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="UpdatedAt" Type="datetime" />
+          <Property Name="UpdatedCount" Type="int" />
+          <Property Name="Notes" Type="varchar" MaxLength="2000" />
+        </EntityType>
+        <EntityType Name="TermInfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TermCode" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="TermName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Days" Type="int" />
+          <Property Name="PenaltyPercentage" Type="int" />
+          <Property Name="Description" Type="varchar" MaxLength="250" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="UpdatedAt" Type="datetime" />
+          <Property Name="UpdatedCount" Type="int" />
+          <Property Name="Notes" Type="varchar" MaxLength="2000" />
+        </EntityType>
+        <EntityType Name="UOM">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UOMCode" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="UOM" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Prefix" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="250" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="UpdatedAt" Type="datetime" />
+          <Property Name="UpdatedCount" Type="int" />
+          <Property Name="Notes" Type="varchar" MaxLength="2000" />
+        </EntityType>
+        <EntityType Name="UserInfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Username" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="FullName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="Notes" Type="varchar" MaxLength="1000" />
+        </EntityType>
+        <Association Name="FK_AppActionGroupAccess_AppActionGroup">
+          <End Role="AppActionGroup" Type="Self.AppActionGroup" Multiplicity="1" />
+          <End Role="AppActionGroupAccess" Type="Self.AppActionGroupAccess" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AppActionGroup">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="AppActionGroupAccess">
+              <PropertyRef Name="AppActionGroupID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AppActionGroupAccess_AppFormAction">
+          <End Role="AppFormAction" Type="Self.AppFormAction" Multiplicity="1" />
+          <End Role="AppActionGroupAccess" Type="Self.AppActionGroupAccess" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AppFormAction">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="AppActionGroupAccess">
+              <PropertyRef Name="AppFormActionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AppMenuGroupAccess_AppMenu">
+          <End Role="AppMenu" Type="Self.AppMenu" Multiplicity="1" />
+          <End Role="AppMenuGroupAccess" Type="Self.AppMenuGroupAccess" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AppMenu">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="AppMenuGroupAccess">
+              <PropertyRef Name="AppMenuID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AppMenuGroupAccess_AppMenuGroups">
+          <End Role="AppMenuGroup" Type="Self.AppMenuGroup" Multiplicity="1" />
+          <End Role="AppMenuGroupAccess" Type="Self.AppMenuGroupAccess" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AppMenuGroup">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="AppMenuGroupAccess">
+              <PropertyRef Name="AppMenuGroupID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CustomerInfo_CompanyInfo">
+          <End Role="CompanyInfo" Type="Self.CompanyInfo" Multiplicity="1" />
+          <End Role="CustomerInfo" Type="Self.CustomerInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CompanyInfo">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CustomerInfo">
+              <PropertyRef Name="CompanyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_POD_ColorInfo">
+          <End Role="ColorInfo" Type="Self.ColorInfo" Multiplicity="1" />
+          <End Role="POD" Type="Self.POD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ColorInfo">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="POD">
+              <PropertyRef Name="ColorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_POD_POM">
+          <End Role="POM" Type="Self.POM" Multiplicity="1" />
+          <End Role="POD" Type="Self.POD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="POM">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="POD">
+              <PropertyRef Name="POMID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_POD_StyleInfo">
+          <End Role="StyleInfo" Type="Self.StyleInfo" Multiplicity="1" />
+          <End Role="POD" Type="Self.POD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StyleInfo">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="POD">
+              <PropertyRef Name="StyleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_POM_CustomerInfo">
+          <End Role="CustomerInfo" Type="Self.CustomerInfo" Multiplicity="1" />
+          <End Role="POM" Type="Self.POM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CustomerInfo">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="POM">
+              <PropertyRef Name="CustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_POM_PackingType">
+          <End Role="PackingType" Type="Self.PackingType" Multiplicity="1" />
+          <End Role="POM" Type="Self.POM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PackingType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="POM">
+              <PropertyRef Name="PackingTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_POM_PaymentModeInfo">
+          <End Role="PaymentModeInfo" Type="Self.PaymentModeInfo" Multiplicity="1" />
+          <End Role="POM" Type="Self.POM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PaymentModeInfo">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="POM">
+              <PropertyRef Name="PaymentModeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_POM_POForm">
+          <End Role="POForm" Type="Self.POForm" Multiplicity="1" />
+          <End Role="POM" Type="Self.POM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="POForm">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="POM">
+              <PropertyRef Name="POFormID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_POM_POLevel">
+          <End Role="POLevel" Type="Self.POLevel" Multiplicity="1" />
+          <End Role="POM" Type="Self.POM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="POLevel">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="POM">
+              <PropertyRef Name="POLevelID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_POM_POType">
+          <End Role="POType" Type="Self.POType" Multiplicity="1" />
+          <End Role="POM" Type="Self.POM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="POType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="POM">
+              <PropertyRef Name="POTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_POM_ShipmentTerm">
+          <End Role="ShipmentTerm" Type="Self.ShipmentTerm" Multiplicity="1" />
+          <End Role="POM" Type="Self.POM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ShipmentTerm">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="POM">
+              <PropertyRef Name="ShipmentTermID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_POM_ShippingMethod">
+          <End Role="ShippingMethod" Type="Self.ShippingMethod" Multiplicity="1" />
+          <End Role="POM" Type="Self.POM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ShippingMethod">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="POM">
+              <PropertyRef Name="ShippingMethodID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_POM_TermInfo">
+          <End Role="TermInfo" Type="Self.TermInfo" Multiplicity="1" />
+          <End Role="POM" Type="Self.POM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TermInfo">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="POM">
+              <PropertyRef Name="TermID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_POSizeD_ColorInfo">
+          <End Role="ColorInfo" Type="Self.ColorInfo" Multiplicity="1" />
+          <End Role="POSizeD" Type="Self.POSizeD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ColorInfo">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="POSizeD">
+              <PropertyRef Name="ColorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_POSizeD_POD">
+          <End Role="POD" Type="Self.POD" Multiplicity="1" />
+          <End Role="POSizeD" Type="Self.POSizeD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="POD">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="POSizeD">
+              <PropertyRef Name="PODID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_POSizeD_SizeInfo">
+          <End Role="SizeInfo" Type="Self.SizeInfo" Multiplicity="1" />
+          <End Role="POSizeD" Type="Self.POSizeD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SizeInfo">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="POSizeD">
+              <PropertyRef Name="SizeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="GPMSDataModelStoreContainer">
+          <EntitySet Name="AppActionGroup" EntityType="Self.AppActionGroup" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AppActionGroupAccess" EntityType="Self.AppActionGroupAccess" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AppFormAction" EntityType="Self.AppFormAction" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AppMenu" EntityType="Self.AppMenu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AppMenuGroup" EntityType="Self.AppMenuGroup" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AppMenuGroupAccess" EntityType="Self.AppMenuGroupAccess" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AppUserCompanyAccess" EntityType="Self.AppUserCompanyAccess" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CartonInfo" EntityType="Self.CartonInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ColorInfo" EntityType="Self.ColorInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CompanyInfo" EntityType="Self.CompanyInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CustomerInfo" EntityType="Self.CustomerInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PackingInstructionD" EntityType="Self.PackingInstructionD" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PackingInstructionM" EntityType="Self.PackingInstructionM" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PackingPlanData" EntityType="Self.PackingPlanData" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PackingType" EntityType="Self.PackingType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PaymentModeInfo" EntityType="Self.PaymentModeInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="POD" EntityType="Self.POD" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="POForm" EntityType="Self.POForm" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="POLevel" EntityType="Self.POLevel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="POM" EntityType="Self.POM" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="POSizeD" EntityType="Self.POSizeD" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="POType" EntityType="Self.POType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ShipmentTerm" EntityType="Self.ShipmentTerm" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ShippingMethod" EntityType="Self.ShippingMethod" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SizeInfo" EntityType="Self.SizeInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StyleInfo" EntityType="Self.StyleInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TermInfo" EntityType="Self.TermInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UOM" EntityType="Self.UOM" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserInfo" EntityType="Self.UserInfo" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_AppActionGroupAccess_AppActionGroup" Association="Self.FK_AppActionGroupAccess_AppActionGroup">
+            <End Role="AppActionGroup" EntitySet="AppActionGroup" />
+            <End Role="AppActionGroupAccess" EntitySet="AppActionGroupAccess" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AppActionGroupAccess_AppFormAction" Association="Self.FK_AppActionGroupAccess_AppFormAction">
+            <End Role="AppFormAction" EntitySet="AppFormAction" />
+            <End Role="AppActionGroupAccess" EntitySet="AppActionGroupAccess" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AppMenuGroupAccess_AppMenu" Association="Self.FK_AppMenuGroupAccess_AppMenu">
+            <End Role="AppMenu" EntitySet="AppMenu" />
+            <End Role="AppMenuGroupAccess" EntitySet="AppMenuGroupAccess" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AppMenuGroupAccess_AppMenuGroups" Association="Self.FK_AppMenuGroupAccess_AppMenuGroups">
+            <End Role="AppMenuGroup" EntitySet="AppMenuGroup" />
+            <End Role="AppMenuGroupAccess" EntitySet="AppMenuGroupAccess" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CustomerInfo_CompanyInfo" Association="Self.FK_CustomerInfo_CompanyInfo">
+            <End Role="CompanyInfo" EntitySet="CompanyInfo" />
+            <End Role="CustomerInfo" EntitySet="CustomerInfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_POD_ColorInfo" Association="Self.FK_POD_ColorInfo">
+            <End Role="ColorInfo" EntitySet="ColorInfo" />
+            <End Role="POD" EntitySet="POD" />
+          </AssociationSet>
+          <AssociationSet Name="FK_POD_POM" Association="Self.FK_POD_POM">
+            <End Role="POM" EntitySet="POM" />
+            <End Role="POD" EntitySet="POD" />
+          </AssociationSet>
+          <AssociationSet Name="FK_POD_StyleInfo" Association="Self.FK_POD_StyleInfo">
+            <End Role="StyleInfo" EntitySet="StyleInfo" />
+            <End Role="POD" EntitySet="POD" />
+          </AssociationSet>
+          <AssociationSet Name="FK_POM_CustomerInfo" Association="Self.FK_POM_CustomerInfo">
+            <End Role="CustomerInfo" EntitySet="CustomerInfo" />
+            <End Role="POM" EntitySet="POM" />
+          </AssociationSet>
+          <AssociationSet Name="FK_POM_PackingType" Association="Self.FK_POM_PackingType">
+            <End Role="PackingType" EntitySet="PackingType" />
+            <End Role="POM" EntitySet="POM" />
+          </AssociationSet>
+          <AssociationSet Name="FK_POM_PaymentModeInfo" Association="Self.FK_POM_PaymentModeInfo">
+            <End Role="PaymentModeInfo" EntitySet="PaymentModeInfo" />
+            <End Role="POM" EntitySet="POM" />
+          </AssociationSet>
+          <AssociationSet Name="FK_POM_POForm" Association="Self.FK_POM_POForm">
+            <End Role="POForm" EntitySet="POForm" />
+            <End Role="POM" EntitySet="POM" />
+          </AssociationSet>
+          <AssociationSet Name="FK_POM_POLevel" Association="Self.FK_POM_POLevel">
+            <End Role="POLevel" EntitySet="POLevel" />
+            <End Role="POM" EntitySet="POM" />
+          </AssociationSet>
+          <AssociationSet Name="FK_POM_POType" Association="Self.FK_POM_POType">
+            <End Role="POType" EntitySet="POType" />
+            <End Role="POM" EntitySet="POM" />
+          </AssociationSet>
+          <AssociationSet Name="FK_POM_ShipmentTerm" Association="Self.FK_POM_ShipmentTerm">
+            <End Role="ShipmentTerm" EntitySet="ShipmentTerm" />
+            <End Role="POM" EntitySet="POM" />
+          </AssociationSet>
+          <AssociationSet Name="FK_POM_ShippingMethod" Association="Self.FK_POM_ShippingMethod">
+            <End Role="ShippingMethod" EntitySet="ShippingMethod" />
+            <End Role="POM" EntitySet="POM" />
+          </AssociationSet>
+          <AssociationSet Name="FK_POM_TermInfo" Association="Self.FK_POM_TermInfo">
+            <End Role="TermInfo" EntitySet="TermInfo" />
+            <End Role="POM" EntitySet="POM" />
+          </AssociationSet>
+          <AssociationSet Name="FK_POSizeD_ColorInfo" Association="Self.FK_POSizeD_ColorInfo">
+            <End Role="ColorInfo" EntitySet="ColorInfo" />
+            <End Role="POSizeD" EntitySet="POSizeD" />
+          </AssociationSet>
+          <AssociationSet Name="FK_POSizeD_POD" Association="Self.FK_POSizeD_POD">
+            <End Role="POD" EntitySet="POD" />
+            <End Role="POSizeD" EntitySet="POSizeD" />
+          </AssociationSet>
+          <AssociationSet Name="FK_POSizeD_SizeInfo" Association="Self.FK_POSizeD_SizeInfo">
+            <End Role="SizeInfo" EntitySet="SizeInfo" />
+            <End Role="POSizeD" EntitySet="POSizeD" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="GPMSDataModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AppActionGroup">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ActionGroup_No" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ActionGroupName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
+          <Property Name="Notes" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="AppActionGroupAccesses" Relationship="Self.FK_AppActionGroupAccess_AppActionGroup" FromRole="AppActionGroup" ToRole="AppActionGroupAccess" />
+        </EntityType>
+        <EntityType Name="AppActionGroupAccess">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AppActionGroupID" Type="Int32" Nullable="false" />
+          <Property Name="AppFormActionID" Type="Int32" Nullable="false" />
+          <Property Name="Status" Type="Boolean" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
+          <Property Name="Notes" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="AppActionGroup" Relationship="Self.FK_AppActionGroupAccess_AppActionGroup" FromRole="AppActionGroupAccess" ToRole="AppActionGroup" />
+          <NavigationProperty Name="AppFormAction" Relationship="Self.FK_AppActionGroupAccess_AppFormAction" FromRole="AppActionGroupAccess" ToRole="AppFormAction" />
+        </EntityType>
+        <EntityType Name="AppFormAction">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FormActionNo" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FormActionName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="ControlName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FormTitle" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="ParentID" Type="Int32" />
+          <Property Name="FormBehaviour" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="ParentControl" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="ControlType" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Action" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
+          <Property Name="Notes" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="AppActionGroupAccesses" Relationship="Self.FK_AppActionGroupAccess_AppFormAction" FromRole="AppFormAction" ToRole="AppActionGroupAccess" />
+        </EntityType>
+        <EntityType Name="AppMenu">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MenuNo" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MenuName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MenuTitle" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ParentID" Type="Int32" />
+          <Property Name="MenuLevel" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
+          <Property Name="Notes" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="AppMenuGroupAccesses" Relationship="Self.FK_AppMenuGroupAccess_AppMenu" FromRole="AppMenu" ToRole="AppMenuGroupAccess" />
+        </EntityType>
+        <EntityType Name="AppMenuGroup">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MenuGroup_No" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MenuGroupName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
+          <Property Name="Notes" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="AppMenuGroupAccesses" Relationship="Self.FK_AppMenuGroupAccess_AppMenuGroups" FromRole="AppMenuGroup" ToRole="AppMenuGroupAccess" />
+        </EntityType>
+        <EntityType Name="AppMenuGroupAccess">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AppMenuGroupID" Type="Int32" Nullable="false" />
+          <Property Name="AppMenuID" Type="Int32" Nullable="false" />
+          <Property Name="Status" Type="Boolean" Nullable="false" />
+          <Property Name="IsVisible" Type="Boolean" Nullable="false" />
+          <Property Name="IsEnable" Type="Boolean" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
+          <Property Name="Notes" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="AppMenu" Relationship="Self.FK_AppMenuGroupAccess_AppMenu" FromRole="AppMenuGroupAccess" ToRole="AppMenu" />
+          <NavigationProperty Name="AppMenuGroup" Relationship="Self.FK_AppMenuGroupAccess_AppMenuGroups" FromRole="AppMenuGroupAccess" ToRole="AppMenuGroup" />
+        </EntityType>
+        <EntityType Name="AppUserCompanyAccess">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="CompanyID" Type="Int32" Nullable="false" />
+          <Property Name="AppMenuGroupID" Type="Int32" Nullable="false" />
+          <Property Name="AppActionGroupID" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
+          <Property Name="Notes" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="CartonInfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CustomerID" Type="Int32" Nullable="false" />
+          <Property Name="CartonCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CartonName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Length" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Width" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Height" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Weight" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="CBM" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="LengthUomID" Type="Int32" Nullable="false" />
+          <Property Name="WidthUomID" Type="Int32" Nullable="false" />
+          <Property Name="HeightUomID" Type="Int32" Nullable="false" />
+          <Property Name="WeightUomID" Type="Int32" Nullable="false" />
+          <Property Name="CBMUomID" Type="Int32" Nullable="false" />
+          <Property Name="Priority" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedCount" Type="Int32" />
+          <Property Name="Notes" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ColorInfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CustomerID" Type="Int32" Nullable="false" />
+          <Property Name="ColorCode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ColorName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedCount" Type="Int32" />
+          <Property Name="Notes" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="PODs" Relationship="Self.FK_POD_ColorInfo" FromRole="ColorInfo" ToRole="POD" />
+          <NavigationProperty Name="POSizeDs" Relationship="Self.FK_POSizeD_ColorInfo" FromRole="ColorInfo" ToRole="POSizeD" />
+        </EntityType>
+        <EntityType Name="CompanyInfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CompanyCode" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CompanyName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ShortName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DisplayName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PreFix" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FAX" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="WebURL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Country" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Zipcode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="PhoneNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LogoPath" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Since" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedCount" Type="Int32" />
+          <Property Name="Notes" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="CustomerInfoes" Relationship="Self.FK_CustomerInfo_CompanyInfo" FromRole="CompanyInfo" ToRole="CustomerInfo" />
+        </EntityType>
+        <EntityType Name="CustomerInfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CompanyID" Type="Int32" Nullable="false" />
+          <Property Name="CustomerCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CustomerName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ShortName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="PreFix" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="BillingAddress" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="PhoneNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EMail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FAX" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Country" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="State" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="City" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Zipcode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedCount" Type="Int32" />
+          <Property Name="Notes" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="CompanyInfo" Relationship="Self.FK_CustomerInfo_CompanyInfo" FromRole="CustomerInfo" ToRole="CompanyInfo" />
+          <NavigationProperty Name="POMs" Relationship="Self.FK_POM_CustomerInfo" FromRole="CustomerInfo" ToRole="POM" />
+        </EntityType>
+        <EntityType Name="PackingInstructionD">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PackingInstructionMID" Type="Int32" Nullable="false" />
+          <Property Name="ItemNo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="UPC" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="UOMID" Type="Int32" Nullable="false" />
+          <Property Name="Color" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Style" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Size" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="SizePackPCsQty" Type="Int32" />
+          <Property Name="SequenceNo" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="StoreNo" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="DC" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="ScanDate" Type="DateTime" Precision="3" />
+          <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedCount" Type="Int32" />
+          <Property Name="Notes" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="PackingInstructionM">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CustomerID" Type="Int32" />
+          <Property Name="OrderID" Type="Int32" />
+          <Property Name="PONo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="BoxBarcode" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="CaseGrossWeight" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="CaseCBM" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="ContainerNo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="CartonSequence" Type="Int32" />
+          <Property Name="MarkFor" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="StoreNo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="DC" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="UsageIndicator" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="UccPO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UccDept" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="UccStyle" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="UccColor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UccSize" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="UccPartners" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UccType" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="UccCoo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedCount" Type="Int32" />
+          <Property Name="Notes" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="PackingPlanData">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CustomerID" Type="Int32" />
+          <Property Name="SourceFileName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PONo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="GroupNo" Type="Int32" />
+          <Property Name="GroupCartonQty" Type="Int32" />
+          <Property Name="PCsPerCarton" Type="Int32" />
+          <Property Name="Color" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Style" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Size" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="SizePackPCsQty" Type="Int32" />
+          <Property Name="UPC" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="StoreNo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="DC" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="UccPartners" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UccType" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="UccCoo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedCount" Type="Int32" />
+          <Property Name="Notes" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="PackingType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PackingTypeCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PackingTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedCount" Type="Int32" />
+          <Property Name="Notes" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="POMs" Relationship="Self.FK_POM_PackingType" FromRole="PackingType" ToRole="POM" />
+        </EntityType>
+        <EntityType Name="PaymentModeInfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PaymentModeCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PaymentModeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Days" Type="Int32" />
+          <Property Name="PenaltyPercentage" Type="Int32" />
+          <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedCount" Type="Int32" />
+          <Property Name="Notes" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="POMs" Relationship="Self.FK_POM_PaymentModeInfo" FromRole="PaymentModeInfo" ToRole="POM" />
+        </EntityType>
+        <EntityType Name="POD">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="POMID" Type="Int32" Nullable="false" />
+          <Property Name="StyleID" Type="Int32" Nullable="false" />
+          <Property Name="ColorID" Type="Int32" Nullable="false" />
+          <Property Name="ComboCode" Type="Int32" />
+          <Property Name="IsPilotRun" Type="Boolean" />
+          <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedCount" Type="Int32" />
+          <Property Name="Notes" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ColorInfo" Relationship="Self.FK_POD_ColorInfo" FromRole="POD" ToRole="ColorInfo" />
+          <NavigationProperty Name="POM" Relationship="Self.FK_POD_POM" FromRole="POD" ToRole="POM" />
+          <NavigationProperty Name="StyleInfo" Relationship="Self.FK_POD_StyleInfo" FromRole="POD" ToRole="StyleInfo" />
+          <NavigationProperty Name="POSizeDs" Relationship="Self.FK_POSizeD_POD" FromRole="POD" ToRole="POSizeD" />
+        </EntityType>
+        <EntityType Name="POForm">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="POFormCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="POFormName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedCount" Type="Int32" />
+          <Property Name="Notes" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="POMs" Relationship="Self.FK_POM_POForm" FromRole="POForm" ToRole="POM" />
+        </EntityType>
+        <EntityType Name="POLevel">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="POLevelCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="POLevelName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedCount" Type="Int32" />
+          <Property Name="Notes" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="POMs" Relationship="Self.FK_POM_POLevel" FromRole="POLevel" ToRole="POM" />
+        </EntityType>
+        <EntityType Name="POM">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CustomerID" Type="Int32" Nullable="false" />
+          <Property Name="PONo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="OriginalPONo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="POReceivedDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="PaymentModeID" Type="Int32" Nullable="false" />
+          <Property Name="TermID" Type="Int32" Nullable="false" />
+          <Property Name="ShippingMethodID" Type="Int32" Nullable="false" />
+          <Property Name="ShipmentTermID" Type="Int32" Nullable="false" />
+          <Property Name="POFormID" Type="Int32" Nullable="false" />
+          <Property Name="POTypeID" Type="Int32" Nullable="false" />
+          <Property Name="POLevelID" Type="Int32" Nullable="false" />
+          <Property Name="PackingTypeID" Type="Int32" Nullable="false" />
+          <Property Name="POStartDate" Type="DateTime" Precision="0" />
+          <Property Name="POStatus" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="GarmentDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BillTo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Season" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RivisionNo" Type="Int32" />
+          <Property Name="LastRevisionDate" Type="DateTime" Precision="3" />
+          <Property Name="ClosingDate" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="ClosedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ShipDate" Type="DateTime" Precision="0" />
+          <Property Name="ShipRequestDate" Type="DateTime" Precision="0" />
+          <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedCount" Type="Int32" />
+          <Property Name="Notes" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="CustomerInfo" Relationship="Self.FK_POM_CustomerInfo" FromRole="POM" ToRole="CustomerInfo" />
+          <NavigationProperty Name="PackingType" Relationship="Self.FK_POM_PackingType" FromRole="POM" ToRole="PackingType" />
+          <NavigationProperty Name="PaymentModeInfo" Relationship="Self.FK_POM_PaymentModeInfo" FromRole="POM" ToRole="PaymentModeInfo" />
+          <NavigationProperty Name="PODs" Relationship="Self.FK_POD_POM" FromRole="POM" ToRole="POD" />
+          <NavigationProperty Name="POForm" Relationship="Self.FK_POM_POForm" FromRole="POM" ToRole="POForm" />
+          <NavigationProperty Name="POLevel" Relationship="Self.FK_POM_POLevel" FromRole="POM" ToRole="POLevel" />
+          <NavigationProperty Name="POType" Relationship="Self.FK_POM_POType" FromRole="POM" ToRole="POType" />
+          <NavigationProperty Name="ShipmentTerm" Relationship="Self.FK_POM_ShipmentTerm" FromRole="POM" ToRole="ShipmentTerm" />
+          <NavigationProperty Name="ShippingMethod" Relationship="Self.FK_POM_ShippingMethod" FromRole="POM" ToRole="ShippingMethod" />
+          <NavigationProperty Name="TermInfo" Relationship="Self.FK_POM_TermInfo" FromRole="POM" ToRole="TermInfo" />
+        </EntityType>
+        <EntityType Name="POSizeD">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PODID" Type="Int32" Nullable="false" />
+          <Property Name="ColorID" Type="Int32" Nullable="false" />
+          <Property Name="SizeID" Type="Int32" Nullable="false" />
+          <Property Name="Qty" Type="Int32" Nullable="false" />
+          <Property Name="Price" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedCount" Type="Int32" />
+          <Property Name="Notes" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ColorInfo" Relationship="Self.FK_POSizeD_ColorInfo" FromRole="POSizeD" ToRole="ColorInfo" />
+          <NavigationProperty Name="POD" Relationship="Self.FK_POSizeD_POD" FromRole="POSizeD" ToRole="POD" />
+          <NavigationProperty Name="SizeInfo" Relationship="Self.FK_POSizeD_SizeInfo" FromRole="POSizeD" ToRole="SizeInfo" />
+        </EntityType>
+        <EntityType Name="POType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="POTypeCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="POTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LeadDays" Type="Int32" />
+          <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedCount" Type="Int32" />
+          <Property Name="Notes" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="POMs" Relationship="Self.FK_POM_POType" FromRole="POType" ToRole="POM" />
+        </EntityType>
+        <EntityType Name="ShipmentTerm">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ShipmentTermCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ShipmentTermName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedCount" Type="Int32" />
+          <Property Name="Notes" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="POMs" Relationship="Self.FK_POM_ShipmentTerm" FromRole="ShipmentTerm" ToRole="POM" />
+        </EntityType>
+        <EntityType Name="ShippingMethod">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ShippingMethodCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ShippingMethodName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedCount" Type="Int32" />
+          <Property Name="Notes" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="POMs" Relationship="Self.FK_POM_ShippingMethod" FromRole="ShippingMethod" ToRole="POM" />
+        </EntityType>
+        <EntityType Name="SizeInfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CustomerID" Type="Int32" Nullable="false" />
+          <Property Name="SizeCode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SizeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedCount" Type="Int32" />
+          <Property Name="Notes" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="POSizeDs" Relationship="Self.FK_POSizeD_SizeInfo" FromRole="SizeInfo" ToRole="POSizeD" />
+        </EntityType>
+        <EntityType Name="StyleInfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CustomerID" Type="Int32" Nullable="false" />
+          <Property Name="StyleCode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="StyleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedCount" Type="Int32" />
+          <Property Name="Notes" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="PODs" Relationship="Self.FK_POD_StyleInfo" FromRole="StyleInfo" ToRole="POD" />
+        </EntityType>
+        <EntityType Name="TermInfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TermCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TermName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Days" Type="Int32" />
+          <Property Name="PenaltyPercentage" Type="Int32" />
+          <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedCount" Type="Int32" />
+          <Property Name="Notes" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="POMs" Relationship="Self.FK_POM_TermInfo" FromRole="TermInfo" ToRole="POM" />
+        </EntityType>
+        <EntityType Name="UOM">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UOMCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="UOM1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Prefix" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedCount" Type="Int32" />
+          <Property Name="Notes" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="UserInfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FullName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Notes" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <Association Name="FK_AppActionGroupAccess_AppActionGroup">
+          <End Role="AppActionGroup" Type="Self.AppActionGroup" Multiplicity="1" />
+          <End Role="AppActionGroupAccess" Type="Self.AppActionGroupAccess" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AppActionGroup">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="AppActionGroupAccess">
+              <PropertyRef Name="AppActionGroupID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AppActionGroupAccess_AppFormAction">
+          <End Role="AppFormAction" Type="Self.AppFormAction" Multiplicity="1" />
+          <End Role="AppActionGroupAccess" Type="Self.AppActionGroupAccess" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AppFormAction">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="AppActionGroupAccess">
+              <PropertyRef Name="AppFormActionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AppMenuGroupAccess_AppMenu">
+          <End Role="AppMenu" Type="Self.AppMenu" Multiplicity="1" />
+          <End Role="AppMenuGroupAccess" Type="Self.AppMenuGroupAccess" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AppMenu">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="AppMenuGroupAccess">
+              <PropertyRef Name="AppMenuID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AppMenuGroupAccess_AppMenuGroups">
+          <End Role="AppMenuGroup" Type="Self.AppMenuGroup" Multiplicity="1" />
+          <End Role="AppMenuGroupAccess" Type="Self.AppMenuGroupAccess" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AppMenuGroup">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="AppMenuGroupAccess">
+              <PropertyRef Name="AppMenuGroupID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_POD_ColorInfo">
+          <End Role="ColorInfo" Type="Self.ColorInfo" Multiplicity="1" />
+          <End Role="POD" Type="Self.POD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ColorInfo">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="POD">
+              <PropertyRef Name="ColorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_POSizeD_ColorInfo">
+          <End Role="ColorInfo" Type="Self.ColorInfo" Multiplicity="1" />
+          <End Role="POSizeD" Type="Self.POSizeD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ColorInfo">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="POSizeD">
+              <PropertyRef Name="ColorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CustomerInfo_CompanyInfo">
+          <End Role="CompanyInfo" Type="Self.CompanyInfo" Multiplicity="1" />
+          <End Role="CustomerInfo" Type="Self.CustomerInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CompanyInfo">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CustomerInfo">
+              <PropertyRef Name="CompanyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_POM_CustomerInfo">
+          <End Role="CustomerInfo" Type="Self.CustomerInfo" Multiplicity="1" />
+          <End Role="POM" Type="Self.POM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CustomerInfo">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="POM">
+              <PropertyRef Name="CustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_POM_PackingType">
+          <End Role="PackingType" Type="Self.PackingType" Multiplicity="1" />
+          <End Role="POM" Type="Self.POM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PackingType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="POM">
+              <PropertyRef Name="PackingTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_POM_PaymentModeInfo">
+          <End Role="PaymentModeInfo" Type="Self.PaymentModeInfo" Multiplicity="1" />
+          <End Role="POM" Type="Self.POM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PaymentModeInfo">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="POM">
+              <PropertyRef Name="PaymentModeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_POD_POM">
+          <End Role="POM" Type="Self.POM" Multiplicity="1" />
+          <End Role="POD" Type="Self.POD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="POM">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="POD">
+              <PropertyRef Name="POMID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_POD_StyleInfo">
+          <End Role="StyleInfo" Type="Self.StyleInfo" Multiplicity="1" />
+          <End Role="POD" Type="Self.POD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StyleInfo">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="POD">
+              <PropertyRef Name="StyleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_POSizeD_POD">
+          <End Role="POD" Type="Self.POD" Multiplicity="1" />
+          <End Role="POSizeD" Type="Self.POSizeD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="POD">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="POSizeD">
+              <PropertyRef Name="PODID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_POM_POForm">
+          <End Role="POForm" Type="Self.POForm" Multiplicity="1" />
+          <End Role="POM" Type="Self.POM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="POForm">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="POM">
+              <PropertyRef Name="POFormID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_POM_POLevel">
+          <End Role="POLevel" Type="Self.POLevel" Multiplicity="1" />
+          <End Role="POM" Type="Self.POM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="POLevel">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="POM">
+              <PropertyRef Name="POLevelID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_POM_POType">
+          <End Role="POType" Type="Self.POType" Multiplicity="1" />
+          <End Role="POM" Type="Self.POM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="POType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="POM">
+              <PropertyRef Name="POTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_POM_ShipmentTerm">
+          <End Role="ShipmentTerm" Type="Self.ShipmentTerm" Multiplicity="1" />
+          <End Role="POM" Type="Self.POM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ShipmentTerm">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="POM">
+              <PropertyRef Name="ShipmentTermID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_POM_ShippingMethod">
+          <End Role="ShippingMethod" Type="Self.ShippingMethod" Multiplicity="1" />
+          <End Role="POM" Type="Self.POM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ShippingMethod">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="POM">
+              <PropertyRef Name="ShippingMethodID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_POM_TermInfo">
+          <End Role="TermInfo" Type="Self.TermInfo" Multiplicity="1" />
+          <End Role="POM" Type="Self.POM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TermInfo">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="POM">
+              <PropertyRef Name="TermID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_POSizeD_SizeInfo">
+          <End Role="SizeInfo" Type="Self.SizeInfo" Multiplicity="1" />
+          <End Role="POSizeD" Type="Self.POSizeD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SizeInfo">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="POSizeD">
+              <PropertyRef Name="SizeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="GPMSEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AppActionGroups" EntityType="Self.AppActionGroup" />
+          <EntitySet Name="AppActionGroupAccesses" EntityType="Self.AppActionGroupAccess" />
+          <EntitySet Name="AppFormActions" EntityType="Self.AppFormAction" />
+          <EntitySet Name="AppMenus" EntityType="Self.AppMenu" />
+          <EntitySet Name="AppMenuGroups" EntityType="Self.AppMenuGroup" />
+          <EntitySet Name="AppMenuGroupAccesses" EntityType="Self.AppMenuGroupAccess" />
+          <EntitySet Name="AppUserCompanyAccesses" EntityType="Self.AppUserCompanyAccess" />
+          <EntitySet Name="CartonInfoes" EntityType="Self.CartonInfo" />
+          <EntitySet Name="ColorInfoes" EntityType="Self.ColorInfo" />
+          <EntitySet Name="CompanyInfoes" EntityType="Self.CompanyInfo" />
+          <EntitySet Name="CustomerInfoes" EntityType="Self.CustomerInfo" />
+          <EntitySet Name="PackingInstructionDs" EntityType="Self.PackingInstructionD" />
+          <EntitySet Name="PackingInstructionMs" EntityType="Self.PackingInstructionM" />
+          <EntitySet Name="PackingPlanDatas" EntityType="Self.PackingPlanData" />
+          <EntitySet Name="PackingTypes" EntityType="Self.PackingType" />
+          <EntitySet Name="PaymentModeInfoes" EntityType="Self.PaymentModeInfo" />
+          <EntitySet Name="PODs" EntityType="Self.POD" />
+          <EntitySet Name="POForms" EntityType="Self.POForm" />
+          <EntitySet Name="POLevels" EntityType="Self.POLevel" />
+          <EntitySet Name="POMs" EntityType="Self.POM" />
+          <EntitySet Name="POSizeDs" EntityType="Self.POSizeD" />
+          <EntitySet Name="POTypes" EntityType="Self.POType" />
+          <EntitySet Name="ShipmentTerms" EntityType="Self.ShipmentTerm" />
+          <EntitySet Name="ShippingMethods" EntityType="Self.ShippingMethod" />
+          <EntitySet Name="SizeInfoes" EntityType="Self.SizeInfo" />
+          <EntitySet Name="StyleInfoes" EntityType="Self.StyleInfo" />
+          <EntitySet Name="TermInfoes" EntityType="Self.TermInfo" />
+          <EntitySet Name="UOMs" EntityType="Self.UOM" />
+          <EntitySet Name="UserInfoes" EntityType="Self.UserInfo" />
+          <AssociationSet Name="FK_AppActionGroupAccess_AppActionGroup" Association="Self.FK_AppActionGroupAccess_AppActionGroup">
+            <End Role="AppActionGroup" EntitySet="AppActionGroups" />
+            <End Role="AppActionGroupAccess" EntitySet="AppActionGroupAccesses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AppActionGroupAccess_AppFormAction" Association="Self.FK_AppActionGroupAccess_AppFormAction">
+            <End Role="AppFormAction" EntitySet="AppFormActions" />
+            <End Role="AppActionGroupAccess" EntitySet="AppActionGroupAccesses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AppMenuGroupAccess_AppMenu" Association="Self.FK_AppMenuGroupAccess_AppMenu">
+            <End Role="AppMenu" EntitySet="AppMenus" />
+            <End Role="AppMenuGroupAccess" EntitySet="AppMenuGroupAccesses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AppMenuGroupAccess_AppMenuGroups" Association="Self.FK_AppMenuGroupAccess_AppMenuGroups">
+            <End Role="AppMenuGroup" EntitySet="AppMenuGroups" />
+            <End Role="AppMenuGroupAccess" EntitySet="AppMenuGroupAccesses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_POD_ColorInfo" Association="Self.FK_POD_ColorInfo">
+            <End Role="ColorInfo" EntitySet="ColorInfoes" />
+            <End Role="POD" EntitySet="PODs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_POSizeD_ColorInfo" Association="Self.FK_POSizeD_ColorInfo">
+            <End Role="ColorInfo" EntitySet="ColorInfoes" />
+            <End Role="POSizeD" EntitySet="POSizeDs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CustomerInfo_CompanyInfo" Association="Self.FK_CustomerInfo_CompanyInfo">
+            <End Role="CompanyInfo" EntitySet="CompanyInfoes" />
+            <End Role="CustomerInfo" EntitySet="CustomerInfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_POM_CustomerInfo" Association="Self.FK_POM_CustomerInfo">
+            <End Role="CustomerInfo" EntitySet="CustomerInfoes" />
+            <End Role="POM" EntitySet="POMs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_POM_PackingType" Association="Self.FK_POM_PackingType">
+            <End Role="PackingType" EntitySet="PackingTypes" />
+            <End Role="POM" EntitySet="POMs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_POM_PaymentModeInfo" Association="Self.FK_POM_PaymentModeInfo">
+            <End Role="PaymentModeInfo" EntitySet="PaymentModeInfoes" />
+            <End Role="POM" EntitySet="POMs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_POD_POM" Association="Self.FK_POD_POM">
+            <End Role="POM" EntitySet="POMs" />
+            <End Role="POD" EntitySet="PODs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_POD_StyleInfo" Association="Self.FK_POD_StyleInfo">
+            <End Role="StyleInfo" EntitySet="StyleInfoes" />
+            <End Role="POD" EntitySet="PODs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_POSizeD_POD" Association="Self.FK_POSizeD_POD">
+            <End Role="POD" EntitySet="PODs" />
+            <End Role="POSizeD" EntitySet="POSizeDs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_POM_POForm" Association="Self.FK_POM_POForm">
+            <End Role="POForm" EntitySet="POForms" />
+            <End Role="POM" EntitySet="POMs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_POM_POLevel" Association="Self.FK_POM_POLevel">
+            <End Role="POLevel" EntitySet="POLevels" />
+            <End Role="POM" EntitySet="POMs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_POM_POType" Association="Self.FK_POM_POType">
+            <End Role="POType" EntitySet="POTypes" />
+            <End Role="POM" EntitySet="POMs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_POM_ShipmentTerm" Association="Self.FK_POM_ShipmentTerm">
+            <End Role="ShipmentTerm" EntitySet="ShipmentTerms" />
+            <End Role="POM" EntitySet="POMs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_POM_ShippingMethod" Association="Self.FK_POM_ShippingMethod">
+            <End Role="ShippingMethod" EntitySet="ShippingMethods" />
+            <End Role="POM" EntitySet="POMs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_POM_TermInfo" Association="Self.FK_POM_TermInfo">
+            <End Role="TermInfo" EntitySet="TermInfoes" />
+            <End Role="POM" EntitySet="POMs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_POSizeD_SizeInfo" Association="Self.FK_POSizeD_SizeInfo">
+            <End Role="SizeInfo" EntitySet="SizeInfoes" />
+            <End Role="POSizeD" EntitySet="POSizeDs" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="GPMSDataModelStoreContainer" CdmEntityContainer="GPMSEntities">
+          <EntitySetMapping Name="AppActionGroups">
+            <EntityTypeMapping TypeName="GPMSDataModel.AppActionGroup">
+              <MappingFragment StoreEntitySet="AppActionGroup">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ActionGroup_No" ColumnName="ActionGroup_No" />
+                <ScalarProperty Name="ActionGroupName" ColumnName="ActionGroupName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AppActionGroupAccesses">
+            <EntityTypeMapping TypeName="GPMSDataModel.AppActionGroupAccess">
+              <MappingFragment StoreEntitySet="AppActionGroupAccess">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="AppActionGroupID" ColumnName="AppActionGroupID" />
+                <ScalarProperty Name="AppFormActionID" ColumnName="AppFormActionID" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AppFormActions">
+            <EntityTypeMapping TypeName="GPMSDataModel.AppFormAction">
+              <MappingFragment StoreEntitySet="AppFormAction">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="FormActionNo" ColumnName="FormActionNo" />
+                <ScalarProperty Name="FormActionName" ColumnName="FormActionName" />
+                <ScalarProperty Name="ControlName" ColumnName="ControlName" />
+                <ScalarProperty Name="FormTitle" ColumnName="FormTitle" />
+                <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+                <ScalarProperty Name="FormBehaviour" ColumnName="FormBehaviour" />
+                <ScalarProperty Name="ParentControl" ColumnName="ParentControl" />
+                <ScalarProperty Name="ControlType" ColumnName="ControlType" />
+                <ScalarProperty Name="Action" ColumnName="Action" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AppMenus">
+            <EntityTypeMapping TypeName="GPMSDataModel.AppMenu">
+              <MappingFragment StoreEntitySet="AppMenu">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="MenuNo" ColumnName="MenuNo" />
+                <ScalarProperty Name="MenuName" ColumnName="MenuName" />
+                <ScalarProperty Name="MenuTitle" ColumnName="MenuTitle" />
+                <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+                <ScalarProperty Name="MenuLevel" ColumnName="MenuLevel" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AppMenuGroups">
+            <EntityTypeMapping TypeName="GPMSDataModel.AppMenuGroup">
+              <MappingFragment StoreEntitySet="AppMenuGroup">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="MenuGroup_No" ColumnName="MenuGroup_No" />
+                <ScalarProperty Name="MenuGroupName" ColumnName="MenuGroupName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AppMenuGroupAccesses">
+            <EntityTypeMapping TypeName="GPMSDataModel.AppMenuGroupAccess">
+              <MappingFragment StoreEntitySet="AppMenuGroupAccess">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="AppMenuGroupID" ColumnName="AppMenuGroupID" />
+                <ScalarProperty Name="AppMenuID" ColumnName="AppMenuID" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="IsVisible" ColumnName="IsVisible" />
+                <ScalarProperty Name="IsEnable" ColumnName="IsEnable" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AppUserCompanyAccesses">
+            <EntityTypeMapping TypeName="GPMSDataModel.AppUserCompanyAccess">
+              <MappingFragment StoreEntitySet="AppUserCompanyAccess">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+                <ScalarProperty Name="AppMenuGroupID" ColumnName="AppMenuGroupID" />
+                <ScalarProperty Name="AppActionGroupID" ColumnName="AppActionGroupID" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CartonInfoes">
+            <EntityTypeMapping TypeName="GPMSDataModel.CartonInfo">
+              <MappingFragment StoreEntitySet="CartonInfo">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="CartonCode" ColumnName="CartonCode" />
+                <ScalarProperty Name="CartonName" ColumnName="CartonName" />
+                <ScalarProperty Name="Length" ColumnName="Length" />
+                <ScalarProperty Name="Width" ColumnName="Width" />
+                <ScalarProperty Name="Height" ColumnName="Height" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="CBM" ColumnName="CBM" />
+                <ScalarProperty Name="LengthUomID" ColumnName="LengthUomID" />
+                <ScalarProperty Name="WidthUomID" ColumnName="WidthUomID" />
+                <ScalarProperty Name="HeightUomID" ColumnName="HeightUomID" />
+                <ScalarProperty Name="WeightUomID" ColumnName="WeightUomID" />
+                <ScalarProperty Name="CBMUomID" ColumnName="CBMUomID" />
+                <ScalarProperty Name="Priority" ColumnName="Priority" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="UpdatedCount" ColumnName="UpdatedCount" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ColorInfoes">
+            <EntityTypeMapping TypeName="GPMSDataModel.ColorInfo">
+              <MappingFragment StoreEntitySet="ColorInfo">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="ColorCode" ColumnName="ColorCode" />
+                <ScalarProperty Name="ColorName" ColumnName="ColorName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="UpdatedCount" ColumnName="UpdatedCount" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CompanyInfoes">
+            <EntityTypeMapping TypeName="GPMSDataModel.CompanyInfo">
+              <MappingFragment StoreEntitySet="CompanyInfo">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CompanyCode" ColumnName="CompanyCode" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="ShortName" ColumnName="ShortName" />
+                <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+                <ScalarProperty Name="PreFix" ColumnName="PreFix" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="FAX" ColumnName="FAX" />
+                <ScalarProperty Name="WebURL" ColumnName="WebURL" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Zipcode" ColumnName="Zipcode" />
+                <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+                <ScalarProperty Name="LogoPath" ColumnName="LogoPath" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Since" ColumnName="Since" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="UpdatedCount" ColumnName="UpdatedCount" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CustomerInfoes">
+            <EntityTypeMapping TypeName="GPMSDataModel.CustomerInfo">
+              <MappingFragment StoreEntitySet="CustomerInfo">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+                <ScalarProperty Name="CustomerCode" ColumnName="CustomerCode" />
+                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+                <ScalarProperty Name="ShortName" ColumnName="ShortName" />
+                <ScalarProperty Name="PreFix" ColumnName="PreFix" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="BillingAddress" ColumnName="BillingAddress" />
+                <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+                <ScalarProperty Name="EMail" ColumnName="EMail" />
+                <ScalarProperty Name="FAX" ColumnName="FAX" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Zipcode" ColumnName="Zipcode" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="UpdatedCount" ColumnName="UpdatedCount" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PackingInstructionDs">
+            <EntityTypeMapping TypeName="GPMSDataModel.PackingInstructionD">
+              <MappingFragment StoreEntitySet="PackingInstructionD">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="PackingInstructionMID" ColumnName="PackingInstructionMID" />
+                <ScalarProperty Name="ItemNo" ColumnName="ItemNo" />
+                <ScalarProperty Name="UPC" ColumnName="UPC" />
+                <ScalarProperty Name="UOMID" ColumnName="UOMID" />
+                <ScalarProperty Name="Color" ColumnName="Color" />
+                <ScalarProperty Name="Style" ColumnName="Style" />
+                <ScalarProperty Name="Size" ColumnName="Size" />
+                <ScalarProperty Name="SizePackPCsQty" ColumnName="SizePackPCsQty" />
+                <ScalarProperty Name="SequenceNo" ColumnName="SequenceNo" />
+                <ScalarProperty Name="StoreNo" ColumnName="StoreNo" />
+                <ScalarProperty Name="DC" ColumnName="DC" />
+                <ScalarProperty Name="ScanDate" ColumnName="ScanDate" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="UpdatedCount" ColumnName="UpdatedCount" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PackingInstructionMs">
+            <EntityTypeMapping TypeName="GPMSDataModel.PackingInstructionM">
+              <MappingFragment StoreEntitySet="PackingInstructionM">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="PONo" ColumnName="PONo" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="BoxBarcode" ColumnName="BoxBarcode" />
+                <ScalarProperty Name="CaseGrossWeight" ColumnName="CaseGrossWeight" />
+                <ScalarProperty Name="CaseCBM" ColumnName="CaseCBM" />
+                <ScalarProperty Name="ContainerNo" ColumnName="ContainerNo" />
+                <ScalarProperty Name="CartonSequence" ColumnName="CartonSequence" />
+                <ScalarProperty Name="MarkFor" ColumnName="MarkFor" />
+                <ScalarProperty Name="StoreNo" ColumnName="StoreNo" />
+                <ScalarProperty Name="DC" ColumnName="DC" />
+                <ScalarProperty Name="UsageIndicator" ColumnName="UsageIndicator" />
+                <ScalarProperty Name="UccPO" ColumnName="UccPO" />
+                <ScalarProperty Name="UccDept" ColumnName="UccDept" />
+                <ScalarProperty Name="UccStyle" ColumnName="UccStyle" />
+                <ScalarProperty Name="UccColor" ColumnName="UccColor" />
+                <ScalarProperty Name="UccSize" ColumnName="UccSize" />
+                <ScalarProperty Name="UccPartners" ColumnName="UccPartners" />
+                <ScalarProperty Name="UccType" ColumnName="UccType" />
+                <ScalarProperty Name="UccCoo" ColumnName="UccCoo" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="UpdatedCount" ColumnName="UpdatedCount" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PackingPlanDatas">
+            <EntityTypeMapping TypeName="GPMSDataModel.PackingPlanData">
+              <MappingFragment StoreEntitySet="PackingPlanData">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="SourceFileName" ColumnName="SourceFileName" />
+                <ScalarProperty Name="PONo" ColumnName="PONo" />
+                <ScalarProperty Name="GroupNo" ColumnName="GroupNo" />
+                <ScalarProperty Name="GroupCartonQty" ColumnName="GroupCartonQty" />
+                <ScalarProperty Name="PCsPerCarton" ColumnName="PCsPerCarton" />
+                <ScalarProperty Name="Color" ColumnName="Color" />
+                <ScalarProperty Name="Style" ColumnName="Style" />
+                <ScalarProperty Name="Size" ColumnName="Size" />
+                <ScalarProperty Name="SizePackPCsQty" ColumnName="SizePackPCsQty" />
+                <ScalarProperty Name="UPC" ColumnName="UPC" />
+                <ScalarProperty Name="StoreNo" ColumnName="StoreNo" />
+                <ScalarProperty Name="DC" ColumnName="DC" />
+                <ScalarProperty Name="UccPartners" ColumnName="UccPartners" />
+                <ScalarProperty Name="UccType" ColumnName="UccType" />
+                <ScalarProperty Name="UccCoo" ColumnName="UccCoo" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="UpdatedCount" ColumnName="UpdatedCount" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PackingTypes">
+            <EntityTypeMapping TypeName="GPMSDataModel.PackingType">
+              <MappingFragment StoreEntitySet="PackingType">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="PackingTypeCode" ColumnName="PackingTypeCode" />
+                <ScalarProperty Name="PackingTypeName" ColumnName="PackingTypeName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="UpdatedCount" ColumnName="UpdatedCount" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PaymentModeInfoes">
+            <EntityTypeMapping TypeName="GPMSDataModel.PaymentModeInfo">
+              <MappingFragment StoreEntitySet="PaymentModeInfo">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="PaymentModeCode" ColumnName="PaymentModeCode" />
+                <ScalarProperty Name="PaymentModeName" ColumnName="PaymentModeName" />
+                <ScalarProperty Name="Days" ColumnName="Days" />
+                <ScalarProperty Name="PenaltyPercentage" ColumnName="PenaltyPercentage" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="UpdatedCount" ColumnName="UpdatedCount" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PODs">
+            <EntityTypeMapping TypeName="GPMSDataModel.POD">
+              <MappingFragment StoreEntitySet="POD">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="POMID" ColumnName="POMID" />
+                <ScalarProperty Name="StyleID" ColumnName="StyleID" />
+                <ScalarProperty Name="ColorID" ColumnName="ColorID" />
+                <ScalarProperty Name="ComboCode" ColumnName="ComboCode" />
+                <ScalarProperty Name="IsPilotRun" ColumnName="IsPilotRun" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="UpdatedCount" ColumnName="UpdatedCount" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="POForms">
+            <EntityTypeMapping TypeName="GPMSDataModel.POForm">
+              <MappingFragment StoreEntitySet="POForm">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="POFormCode" ColumnName="POFormCode" />
+                <ScalarProperty Name="POFormName" ColumnName="POFormName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="UpdatedCount" ColumnName="UpdatedCount" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="POLevels">
+            <EntityTypeMapping TypeName="GPMSDataModel.POLevel">
+              <MappingFragment StoreEntitySet="POLevel">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="POLevelCode" ColumnName="POLevelCode" />
+                <ScalarProperty Name="POLevelName" ColumnName="POLevelName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="UpdatedCount" ColumnName="UpdatedCount" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="POMs">
+            <EntityTypeMapping TypeName="GPMSDataModel.POM">
+              <MappingFragment StoreEntitySet="POM">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="PONo" ColumnName="PONo" />
+                <ScalarProperty Name="OriginalPONo" ColumnName="OriginalPONo" />
+                <ScalarProperty Name="POReceivedDate" ColumnName="POReceivedDate" />
+                <ScalarProperty Name="PaymentModeID" ColumnName="PaymentModeID" />
+                <ScalarProperty Name="TermID" ColumnName="TermID" />
+                <ScalarProperty Name="ShippingMethodID" ColumnName="ShippingMethodID" />
+                <ScalarProperty Name="ShipmentTermID" ColumnName="ShipmentTermID" />
+                <ScalarProperty Name="POFormID" ColumnName="POFormID" />
+                <ScalarProperty Name="POTypeID" ColumnName="POTypeID" />
+                <ScalarProperty Name="POLevelID" ColumnName="POLevelID" />
+                <ScalarProperty Name="PackingTypeID" ColumnName="PackingTypeID" />
+                <ScalarProperty Name="POStartDate" ColumnName="POStartDate" />
+                <ScalarProperty Name="POStatus" ColumnName="POStatus" />
+                <ScalarProperty Name="GarmentDescription" ColumnName="GarmentDescription" />
+                <ScalarProperty Name="BillTo" ColumnName="BillTo" />
+                <ScalarProperty Name="Season" ColumnName="Season" />
+                <ScalarProperty Name="RivisionNo" ColumnName="RivisionNo" />
+                <ScalarProperty Name="LastRevisionDate" ColumnName="LastRevisionDate" />
+                <ScalarProperty Name="ClosingDate" ColumnName="ClosingDate" />
+                <ScalarProperty Name="ClosedBy" ColumnName="ClosedBy" />
+                <ScalarProperty Name="ShipDate" ColumnName="ShipDate" />
+                <ScalarProperty Name="ShipRequestDate" ColumnName="ShipRequestDate" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="UpdatedCount" ColumnName="UpdatedCount" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="POSizeDs">
+            <EntityTypeMapping TypeName="GPMSDataModel.POSizeD">
+              <MappingFragment StoreEntitySet="POSizeD">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="PODID" ColumnName="PODID" />
+                <ScalarProperty Name="ColorID" ColumnName="ColorID" />
+                <ScalarProperty Name="SizeID" ColumnName="SizeID" />
+                <ScalarProperty Name="Qty" ColumnName="Qty" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="UpdatedCount" ColumnName="UpdatedCount" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="POTypes">
+            <EntityTypeMapping TypeName="GPMSDataModel.POType">
+              <MappingFragment StoreEntitySet="POType">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="POTypeCode" ColumnName="POTypeCode" />
+                <ScalarProperty Name="POTypeName" ColumnName="POTypeName" />
+                <ScalarProperty Name="LeadDays" ColumnName="LeadDays" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="UpdatedCount" ColumnName="UpdatedCount" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ShipmentTerms">
+            <EntityTypeMapping TypeName="GPMSDataModel.ShipmentTerm">
+              <MappingFragment StoreEntitySet="ShipmentTerm">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ShipmentTermCode" ColumnName="ShipmentTermCode" />
+                <ScalarProperty Name="ShipmentTermName" ColumnName="ShipmentTermName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="UpdatedCount" ColumnName="UpdatedCount" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ShippingMethods">
+            <EntityTypeMapping TypeName="GPMSDataModel.ShippingMethod">
+              <MappingFragment StoreEntitySet="ShippingMethod">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ShippingMethodCode" ColumnName="ShippingMethodCode" />
+                <ScalarProperty Name="ShippingMethodName" ColumnName="ShippingMethodName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="UpdatedCount" ColumnName="UpdatedCount" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SizeInfoes">
+            <EntityTypeMapping TypeName="GPMSDataModel.SizeInfo">
+              <MappingFragment StoreEntitySet="SizeInfo">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="SizeCode" ColumnName="SizeCode" />
+                <ScalarProperty Name="SizeName" ColumnName="SizeName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="UpdatedCount" ColumnName="UpdatedCount" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StyleInfoes">
+            <EntityTypeMapping TypeName="GPMSDataModel.StyleInfo">
+              <MappingFragment StoreEntitySet="StyleInfo">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="StyleCode" ColumnName="StyleCode" />
+                <ScalarProperty Name="StyleName" ColumnName="StyleName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="UpdatedCount" ColumnName="UpdatedCount" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TermInfoes">
+            <EntityTypeMapping TypeName="GPMSDataModel.TermInfo">
+              <MappingFragment StoreEntitySet="TermInfo">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TermCode" ColumnName="TermCode" />
+                <ScalarProperty Name="TermName" ColumnName="TermName" />
+                <ScalarProperty Name="Days" ColumnName="Days" />
+                <ScalarProperty Name="PenaltyPercentage" ColumnName="PenaltyPercentage" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="UpdatedCount" ColumnName="UpdatedCount" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UOMs">
+            <EntityTypeMapping TypeName="GPMSDataModel.UOM">
+              <MappingFragment StoreEntitySet="UOM">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UOMCode" ColumnName="UOMCode" />
+                <ScalarProperty Name="UOM1" ColumnName="UOM" />
+                <ScalarProperty Name="Prefix" ColumnName="Prefix" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="UpdatedCount" ColumnName="UpdatedCount" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserInfoes">
+            <EntityTypeMapping TypeName="GPMSDataModel.UserInfo">
+              <MappingFragment StoreEntitySet="UserInfo">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
